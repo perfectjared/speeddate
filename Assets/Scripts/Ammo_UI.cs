@@ -7,6 +7,8 @@ public class Ammo_UI : MonoBehaviour
     private SuperTextMesh stm;
     private Reload reload;
 
+    [Range(0, 6)]
+    [SerializeField]
     private int ammo = 6;
 
     void Start()
@@ -35,7 +37,7 @@ public class Ammo_UI : MonoBehaviour
 
     void UpdateText()
     {
-        stm.text = "<c=rainbow><w>" + ammo;
+        stm.text = ammo + "";
         stm.Rebuild();
     }
 }
