@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum State { Start, Play, Transition, Pause, Cutscene, End};
 public class GameplayManager : MonoBehaviour
 {
     public int round = 0;
@@ -15,6 +16,6 @@ public class GameplayManager : MonoBehaviour
     }
 
     void Update() {
-        
+
     }
 }

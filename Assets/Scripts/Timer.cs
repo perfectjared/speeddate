@@ -5,7 +5,7 @@ using NaughtyAttributes;
 
 public class Timer : MonoBehaviour
 {
-    public int defaultTime = 99;
+    public int length = 10;
     [SerializeField]
     private int timeInt = 0;
     private int timeIntLast = 0;
@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
     }
 
     private IEnumerator Countdown() {
-        time = defaultTime;
+        time = length;
         while (time > 0f) {
             time -= Time.deltaTime * speed;
             timeInt = Mathf.RoundToInt(Mathf.Ceil(time));

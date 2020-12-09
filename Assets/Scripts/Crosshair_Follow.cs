@@ -7,11 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
-
-[System.Serializable] public class _UnityEventInt:UnityEvent<int> {}
-[System.Serializable] public class _UnityEventGameObject:UnityEvent<GameObject> {}
 
 public class Crosshair_Follow : MonoBehaviour
 {
