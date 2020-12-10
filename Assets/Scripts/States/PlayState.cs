@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayState : MonoBehaviour, StateInterface
-{
-    public List<Character> characters = new List<Character>();
-    public Character currentCharacter;
-    private int characterAt = 1;
-
+{   
+    GameplayManager gpm;
     [SerializeField]
     private int round = 1;
 
@@ -16,7 +13,7 @@ public class PlayState : MonoBehaviour, StateInterface
     }
     public void Start()
     {
-        
+        gpm = GetComponent<GameplayManager>();   
     }
 
     void Update()
@@ -26,6 +23,7 @@ public class PlayState : MonoBehaviour, StateInterface
 
     public void StartState() {
         Debug.Log("Play state begun");
+        GameplayManager.Instance.StartPlay();
     }
     public void EndState()
     {

@@ -19,10 +19,6 @@ public class GameStateMachine : MonoBehaviour
 
     [SerializeField]
     GameObject shotObject = null;
-
-    public _UnityEventFloat affectionChange;
-    public _UnityEventFloat flowChange;
-
     void Start() {
         states.Add(new StartingState());
         states.Add(new MenuState());
@@ -64,13 +60,5 @@ public class GameStateMachine : MonoBehaviour
 
     private void End() {
 
-    }
-
-    public void AffectionChange(float value) {
-        affectionChange.Invoke(value);
-    }
-
-    public void FlowChange(float value) {
-        flowChange.Invoke(value);
     }
 }
