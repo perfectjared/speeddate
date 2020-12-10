@@ -5,7 +5,7 @@ using UnityEngine;
 public interface StateInterface
 {
     string Name();
-    void Begin();
+    void StartState();
 
-    void End();
+    void EndState();
 }

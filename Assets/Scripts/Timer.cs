@@ -45,4 +45,9 @@ public class Timer : MonoBehaviour
     public void SetSpeed(float speed) {
         this.speed = speed;
     }
+
+    public void SetLength(int length) {
+        this.length = length;
+        onNumChange.Invoke(length);
+    }
 }

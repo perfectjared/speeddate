@@ -17,10 +17,10 @@ public class MenuState : MonoBehaviour, StateInterface
         
     }
 
-    public void Begin() {
+    public void StartState() {
 
     }
-    public void End()
+    public void EndState()
     {
 
     }

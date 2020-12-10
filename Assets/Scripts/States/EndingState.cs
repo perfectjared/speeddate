@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartState : MonoBehaviour, StateInterface
+public class EndingState : MonoBehaviour, StateInterface
 {
     public string Name() {
-        return "Start";
+        return "Ending";
     }
     public void Start()
     {
@@ -17,10 +17,10 @@ public class StartState : MonoBehaviour, StateInterface
         
     }
 
-    public void Begin() {
+    public void StartState() {
 
     }
-    public void End()
+    public void EndState()
     {
 
     }
