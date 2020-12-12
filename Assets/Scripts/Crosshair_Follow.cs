@@ -20,8 +20,8 @@ public class Crosshair_Follow : MonoBehaviour
     private bool shooting = false;
     private int ammo = 6;
 
-    private AudioSource shootSource;
-    private AudioSource reloadSource;
+    public AudioSource shootSource;
+    public AudioSource reloadSource;
 
     private Vector3 mousePos;
     private Vector3 joyconPos;
@@ -60,7 +60,8 @@ public class Crosshair_Follow : MonoBehaviour
         if (mousePos != mouseIn) {
             joyconControl = false;
             mousePos = mouseIn;
-            transform.position = Camera.main.ScreenToWorldPoint(mouseIn);
+            //transform.position = Camera.main.ScreenToWorldPoint(mouseIn);
+            transform.position = mouseIn;
         }
         if (Input.GetMouseButtonDown(0) && !shooting) {
             Shoot();
@@ -77,7 +78,7 @@ public class Crosshair_Follow : MonoBehaviour
     void Shoot()
     {
         shooting = true;
-
+        Debug.Log("Shoot");
         if (onScreen() && ammo > 0)
         {
             GameObject shotObject;
@@ -89,7 +90,7 @@ public class Crosshair_Follow : MonoBehaviour
                 if (shotObject && shotObject.GetComponent<Button>()) PressButton(shotObject);
             }
             else {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray ray = Camera.main.ViewportPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
                 if(Physics.Raycast (ray, out hit)) {
