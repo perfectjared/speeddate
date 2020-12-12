@@ -3,7 +3,6 @@
 */
 
 //https://answers.unity.com/questions/820599/simulate-button-presses-through-code-unity-46-gui.html
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +13,8 @@ public class Crosshair_Follow : MonoBehaviour
 {
     public Joycon_Crosshair JoyconCrosshair;
     public Ammo_UI ammoUi;
+    public _UnityEventInt onAmmo;
+    public _UnityEventGameObject onShoot;
 
     private Joycon joycon;
     private bool shooting = false;
@@ -83,7 +84,8 @@ public class Crosshair_Follow : MonoBehaviour
             
             if (joyconControl) {
                 shotObject = JoyconCrosshair.pointingObject;
-                Debug.Log("shot " + shotObject + ", " + ammo + "/6");
+                //Debug.Log("shot " + shotObject + ", " + ammo + "/6");
+                onShoot.Invoke(shotObject);
                 if (shotObject && shotObject.GetComponent<Button>()) PressButton(shotObject);
             }
             else {
@@ -92,7 +94,8 @@ public class Crosshair_Follow : MonoBehaviour
 
                 if(Physics.Raycast (ray, out hit)) {
                     shotObject = hit.transform.gameObject;
-                    Debug.Log("shot " + shotObject + ", " + ammo + "/6");
+                    //Debug.Log("shot " + shotObject + ", " + ammo + "/6");
+                    onShoot.Invoke(shotObject);
                 }
             }
 
@@ -122,6 +125,7 @@ public class Crosshair_Follow : MonoBehaviour
         ammo--;
         ammoUi.DecrementAmmo();
         if (ammo == 0) NoAmmo();
+        onAmmo.Invoke(ammo);
     }
 
     void NoAmmo()
@@ -134,5 +138,6 @@ public class Crosshair_Follow : MonoBehaviour
         ammo = 6;
         ammoUi.RefillAmmo();
         reloadSource.Play();
+        onAmmo.Invoke(ammo);
     }
 }
