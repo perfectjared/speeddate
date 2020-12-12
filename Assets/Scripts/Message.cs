@@ -23,14 +23,14 @@ public class Message : MonoBehaviour
         
     }
 
-    public void Message(MessageType messageType, Character.Topic topic, float feeling) {
+    public Message(MessageType messageType, Character.Topic topic, float feeling) {
         this.messageType = messageType;
         this.topic = topic;
         this.feeling = feeling;
         GenerateSentence();
     }
 
-    private string GenerateSentence() {
+    private void GenerateSentence() {
         this.sentence = "";
     }
 }
