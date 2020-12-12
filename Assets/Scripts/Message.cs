@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class Message : MonoBehaviour
 {
-    void Start()
+    public enum MessageType {
+        Topic, SmallTalk, Feeling, FeelingTopic
+    }
+
+    public MessageType messageType;
+    public Character.Topic topic;
+    public float feeling;
+    private string sentence;
+
+        void Start()
     {
         
     }
@@ -12,5 +21,16 @@ public class Message : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Message(MessageType messageType, Character.Topic topic, float feeling) {
+        this.messageType = messageType;
+        this.topic = topic;
+        this.feeling = feeling;
+        GenerateSentence();
+    }
+
+    private string GenerateSentence() {
+        this.sentence = "";
     }
 }

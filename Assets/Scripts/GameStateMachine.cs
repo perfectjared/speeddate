@@ -38,6 +38,11 @@ public class GameStateMachine : MonoBehaviour
         StartState(EndState());
     }
 
+    [Button]
+    public void PostMessage(Message msg) {
+        //logic of adding a new message comoposed of msg to the UI
+    }
+
     private void StartState(bool endState) {
         if (endState) {
             stateString = states[stateAt].Name();
