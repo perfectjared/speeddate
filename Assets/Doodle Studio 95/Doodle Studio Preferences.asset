@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 1783217604, guid: 69c1c77f10b06f7428020bf5fd612607, type: 3}
   m_Name: Doodle Studio Preferences
   m_EditorClassIdentifier: 
-  m_SaveFolder: Textures/Drawn
+  m_SaveFolder: Assets
   m_ShowGrabTool: 1
   m_Preset_Character_Chunky:
     width: 150

@@ -59,9 +59,8 @@ public class Crosshair_Follow : MonoBehaviour
         var mouseIn = Input.mousePosition;
         if (mousePos != mouseIn) {
             joyconControl = false;
-            //mousePos = mouseIn;
-            transform.position = Camera.main.ScreenToWorldPoint(mouseIn);
-            //transform.position = mouseIn;
+            //transform.position = Camera.main.ScreenToWorldPoint(mouseIn); OLD
+            transform.position = mouseIn;
         }
         if (Input.GetMouseButtonDown(0) && !shooting) {
             // Jacques
