@@ -64,7 +64,7 @@ public class Crosshair_Follow : MonoBehaviour
             transform.position = mouseIn;
         }
         if (Input.GetMouseButtonDown(0) && !shooting) {
-            Shoot();
+            // Jacques
         }
         if (!Input.GetMouseButtonDown(0) && shooting && !joyconControl) {
             shooting=false;
@@ -75,27 +75,29 @@ public class Crosshair_Follow : MonoBehaviour
         }
     }
 
+
+
+
     void Shoot()
     {
         shooting = true;
         Debug.Log("Shoot");
         if (onScreen() && ammo > 0)
-        {
-            GameObject shotObject;
+        {            GameObject shotObject;
             
             if (joyconControl) {
                 shotObject = JoyconCrosshair.pointingObject;
-                //Debug.Log("shot " + shotObject + ", " + ammo + "/6");
+                Debug.Log("shot " + shotObject + ", " + ammo + "/6");
                 onShoot.Invoke(shotObject);
                 if (shotObject && shotObject.GetComponent<Button>()) PressButton(shotObject);
             }
             else {
-                Ray ray = Camera.main.ViewportPointToRay(Input.mousePosition);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
                 if(Physics.Raycast (ray, out hit)) {
                     shotObject = hit.transform.gameObject;
-                    //Debug.Log("shot " + shotObject + ", " + ammo + "/6");
+                    Debug.Log("shot " + shotObject + ", " + ammo + "/6");
                     onShoot.Invoke(shotObject);
                 }
             }
