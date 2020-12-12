@@ -59,9 +59,9 @@ public class Crosshair_Follow : MonoBehaviour
         var mouseIn = Input.mousePosition;
         if (mousePos != mouseIn) {
             joyconControl = false;
-            mousePos = mouseIn;
-            //transform.position = Camera.main.ScreenToWorldPoint(mouseIn);
-            transform.position = mouseIn;
+            //mousePos = mouseIn;
+            transform.position = Camera.main.ScreenToWorldPoint(mouseIn);
+            //transform.position = mouseIn;
         }
         if (Input.GetMouseButtonDown(0) && !shooting) {
             Shoot();
@@ -90,7 +90,7 @@ public class Crosshair_Follow : MonoBehaviour
                 if (shotObject && shotObject.GetComponent<Button>()) PressButton(shotObject);
             }
             else {
-                Ray ray = Camera.main.ViewportPointToRay(Input.mousePosition);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
                 if(Physics.Raycast (ray, out hit)) {
