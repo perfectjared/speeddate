@@ -6,9 +6,9 @@ using NaughtyAttributes;
 
 [System.Serializable] public class _UnityEventInt:UnityEvent<int> {}
 [System.Serializable] public class _UnityEventFloat:UnityEvent<float> {}
-
 [System.Serializable] public class _UnityEventGameObject:UnityEvent<GameObject> {}
 [System.Serializable] public class _UnityEventMessage:UnityEvent<Message> {}
+[System.Serializable] public class _UnityEventString:UnityEvent<string>{}
 public class GameStateMachine : MonoBehaviour
 {
     public List<StateInterface> states = new List<StateInterface>();

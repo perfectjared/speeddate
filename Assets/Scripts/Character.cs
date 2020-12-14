@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     };
     
     public float affection = 0;
-    private float flow = 0;
+    private float flow = 0.1f;
     [SerializeField]
     private bool active = false;
     public List<int> sentiments = new List<int>();
@@ -35,15 +35,7 @@ public class Character : MonoBehaviour
         active = false;
     }
 
-    public bool RelevanceCheck(Message msg) {
-        //check if relevant
-        return true;
-    }
-
     public void ReceiveMessage(Message msg) {
-        if (RelevanceCheck(msg)) {
-
-        }
         //change affection based on message received
         //respond based on message received
     }
