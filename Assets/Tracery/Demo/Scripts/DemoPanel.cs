@@ -16,7 +16,7 @@ public class DemoPanel : MonoBehaviour {
 	private void Start() {
 		Debug.Log("GrammarFile text: " + GrammarFile.text);
 		GrammarInput.text = GrammarFile.text;
-		UpdateGrammar();
+        UpdateGrammar();
 	}
 
 	public void UpdateGrammar() {

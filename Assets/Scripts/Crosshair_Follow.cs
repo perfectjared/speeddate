@@ -20,8 +20,8 @@ public class Crosshair_Follow : MonoBehaviour
     private bool shooting = false;
     private int ammo = 6;
 
-    private AudioSource shootSource;
-    private AudioSource reloadSource;
+    public AudioSource shootSource;
+    public AudioSource reloadSource;
 
     private Vector3 mousePos;
     private Vector3 joyconPos;
@@ -59,11 +59,11 @@ public class Crosshair_Follow : MonoBehaviour
         var mouseIn = Input.mousePosition;
         if (mousePos != mouseIn) {
             joyconControl = false;
-            mousePos = mouseIn;
-            transform.position = Camera.main.ScreenToWorldPoint(mouseIn);
+            //transform.position = Camera.main.ScreenToWorldPoint(mouseIn); OLD
+            transform.position = mouseIn;
         }
         if (Input.GetMouseButtonDown(0) && !shooting) {
-            Shoot();
+            UIShoot();
         }
         if (!Input.GetMouseButtonDown(0) && shooting && !joyconControl) {
             shooting=false;
@@ -74,17 +74,26 @@ public class Crosshair_Follow : MonoBehaviour
         }
     }
 
+    public void UIShoot()
+    {
+        shooting = true;
+        Debug.Log("Shoot");
+
+        shootSource.Play();
+        DecrementAmmo();
+    }
+
+
     void Shoot()
     {
         shooting = true;
-
+        Debug.Log("Shoot");
         if (onScreen() && ammo > 0)
-        {
-            GameObject shotObject;
+        {            GameObject shotObject;
             
             if (joyconControl) {
                 shotObject = JoyconCrosshair.pointingObject;
-                //Debug.Log("shot " + shotObject + ", " + ammo + "/6");
+                Debug.Log("shot " + shotObject + ", " + ammo + "/6");
                 onShoot.Invoke(shotObject);
                 if (shotObject && shotObject.GetComponent<Button>()) PressButton(shotObject);
             }
@@ -94,7 +103,7 @@ public class Crosshair_Follow : MonoBehaviour
 
                 if(Physics.Raycast (ray, out hit)) {
                     shotObject = hit.transform.gameObject;
-                    //Debug.Log("shot " + shotObject + ", " + ammo + "/6");
+                    Debug.Log("shot " + shotObject + ", " + ammo + "/6");
                     onShoot.Invoke(shotObject);
                 }
             }
@@ -110,7 +119,7 @@ public class Crosshair_Follow : MonoBehaviour
         }
     }
 
-    bool onScreen() {
+    public bool onScreen() {
         Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
         return new Rect(0, 0, 1, 1).Contains(screenPoint);
     }
@@ -122,10 +131,13 @@ public class Crosshair_Follow : MonoBehaviour
 
     void DecrementAmmo()
     {
-        ammo--;
-        ammoUi.DecrementAmmo();
-        if (ammo == 0) NoAmmo();
-        onAmmo.Invoke(ammo);
+        if(ammo >= 1)
+        {
+            ammo--;
+            ammoUi.DecrementAmmo();
+            if (ammo == 0) NoAmmo();
+            onAmmo.Invoke(ammo);
+        }        
     }
 
     void NoAmmo()
