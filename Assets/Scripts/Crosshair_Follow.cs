@@ -63,7 +63,7 @@ public class Crosshair_Follow : MonoBehaviour
             transform.position = mouseIn;
         }
         if (Input.GetMouseButtonDown(0) && !shooting) {
-            // Jacques
+            UIShoot();
         }
         if (!Input.GetMouseButtonDown(0) && shooting && !joyconControl) {
             shooting=false;
@@ -74,7 +74,14 @@ public class Crosshair_Follow : MonoBehaviour
         }
     }
 
+    public void UIShoot()
+    {
+        shooting = true;
+        Debug.Log("Shoot");
 
+        shootSource.Play();
+        DecrementAmmo();
+    }
 
 
     void Shoot()
@@ -112,7 +119,7 @@ public class Crosshair_Follow : MonoBehaviour
         }
     }
 
-    bool onScreen() {
+    public bool onScreen() {
         Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
         return new Rect(0, 0, 1, 1).Contains(screenPoint);
     }
@@ -124,10 +131,13 @@ public class Crosshair_Follow : MonoBehaviour
 
     void DecrementAmmo()
     {
-        ammo--;
-        ammoUi.DecrementAmmo();
-        if (ammo == 0) NoAmmo();
-        onAmmo.Invoke(ammo);
+        if(ammo >= 1)
+        {
+            ammo--;
+            ammoUi.DecrementAmmo();
+            if (ammo == 0) NoAmmo();
+            onAmmo.Invoke(ammo);
+        }        
     }
 
     void NoAmmo()

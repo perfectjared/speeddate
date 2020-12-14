@@ -63,6 +63,7 @@ Material:
     - PixelSnap: 0
     - _Blend: 0.05
     - _BumpScale: 1
+    - _ColorMask: 15
     - _CullMode: 0
     - _Cutoff: 0.0001
     - _DetailNormalMapScale: 1
@@ -70,11 +71,14 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _MaskComp: 8
     - _MaskMode: 0
+    - _MaskOp: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ReadMask: 255
     - _SDFCutoff: 0.5
     - _SDFMode: 0
     - _ShadowAngle: 137
@@ -84,6 +88,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _WriteMask: 255
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

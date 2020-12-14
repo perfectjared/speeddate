@@ -1,0 +1,9 @@
+{
+  "output": [ "#greetings# #descriptions#,  My name is #name#, I've been thinking about <c=red> #topics# </c>, #question#" ],
+  "name": [ "Jean-Pierre"],
+  "greetings": [ "Hello!", "Hi", "Bonjour" ],
+  "descriptions": [ "mon tresor", "handsome", "darling" ],
+  "topics": [ "the news", "fracking", "horses"],
+  "often": ["A little", "sometimes", "a lot"],
+  "question": ["What do you think?"]
+}
