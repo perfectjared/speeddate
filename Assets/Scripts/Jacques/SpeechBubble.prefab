@@ -25,19 +25,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6973756448838126680}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 6973756449859818411}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.7630005, y: -113.907}
+  m_AnchoredPosition: {x: -143.08179, y: -150.9726}
   m_SizeDelta: {x: 266.63757, y: 74.131195}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &6973756448838126683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c8af7b43b1984d64488be9b5ae5b62ec, type: 3}
+  m_Texture: {fileID: 2800000, guid: 115ca5dd375ad1548b0dd88f639ad9f3, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -99,7 +99,7 @@ RectTransform:
   m_GameObject: {fileID: 6973756449859818410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6973756448838126681}
   m_RootOrder: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ffcfb6d0266347848bf69a03919f483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showAppearanceFoldout: 0
+  showAppearanceFoldout: 1
   showMaterialFoldout: 0
   showPositionFoldout: 1
   showTimingFoldout: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   showAudioFoldout: 0
   showEventFoldout: 0
   info:
-  - pos: {x: -27.5625, y: 15.584198, z: 0}
+  - pos: {x: -29.421875, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: -19.6875, y: 15.584198, z: 0}
+  - pos: {x: -20.234375, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: -11.8125, y: 15.584198, z: 0}
+  - pos: {x: -13.015625, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: -3.9375, y: 15.584198, z: 0}
+  - pos: {x: -5.359375, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -273,7 +273,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: 0, y: 15.584198, z: 0}
+  - pos: {x: -0.109375, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: 7.875, y: 15.584198, z: 0}
+  - pos: {x: 7.328125, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: 15.75, y: 15.584198, z: 0}
+  - pos: {x: 14.984375, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: 19.6875, y: 15.584198, z: 0}
+  - pos: {x: 20.234375, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
   _text: '#output#'
   drawText: '#output#'
   hyphenedText: '#output#'
-  font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  font: {fileID: 12800000, guid: f8c6c92a0062f424fa2c7138c494ccad, type: 3}
   color:
     serializedVersion: 2
     rgba: 4281479730
@@ -459,23 +459,23 @@ MonoBehaviour:
   textMesh: {fileID: 0}
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
-  rawBottomRightTextBounds: {x: 55.125, y: -14, z: 0}
-  topLeftBounds: {x: 345.07422, y: 163.9572, z: 0}
-  topRightBounds: {x: 545.31976, y: 163.9572, z: 0}
-  bottomLeftBounds: {x: 345.07422, y: 104.7888, z: 0}
-  bottomRightBounds: {x: 545.31976, y: 104.7888, z: 0}
-  centerBounds: {x: 445.197, y: 134.373, z: 0}
-  topLeftTextBounds: {x: 417.6345, y: 163.9572, z: 0}
-  topRightTextBounds: {x: 472.7595, y: 163.9572, z: 0}
-  bottomLeftTextBounds: {x: 417.6345, y: 149.9572, z: 0}
-  bottomRightTextBounds: {x: 472.7595, y: 149.9572, z: 0}
-  centerTextBounds: {x: 445.197, y: 156.9572, z: 0}
-  finalTopLeftTextBounds: {x: 417.6345, y: 163.9572, z: 0}
-  finalTopRightTextBounds: {x: 472.7595, y: 163.9572, z: 0}
-  finalBottomLeftTextBounds: {x: 417.6345, y: 149.9572, z: 0}
-  finalBottomRightTextBounds: {x: 472.7595, y: 149.9572, z: 0}
-  finalCenterTextBounds: {x: 445.197, y: 156.9572, z: 0}
-  unwrappedBottomRightTextBounds: {x: 55.125, y: -14, z: 0}
+  rawBottomRightTextBounds: {x: 58.84375, y: -14, z: 0}
+  topLeftBounds: {x: 343.38312, y: 95.15939, z: 0}
+  topRightBounds: {x: 343.38312, y: -4.963379, z: 0}
+  bottomLeftBounds: {x: 313.7989, y: 95.15941, z: 0}
+  bottomRightBounds: {x: 313.7989, y: -4.963379, z: 0}
+  centerBounds: {x: 328.591, y: 45.098007, z: 0}
+  topLeftTextBounds: {x: 343.38312, y: 59.808945, z: 0}
+  topRightTextBounds: {x: 343.38312, y: 30.387054, z: 0}
+  bottomLeftTextBounds: {x: 336.38312, y: 59.808945, z: 0}
+  bottomRightTextBounds: {x: 336.38312, y: 30.387054, z: 0}
+  centerTextBounds: {x: 339.88312, y: 45.098, z: 0}
+  finalTopLeftTextBounds: {x: 343.38312, y: 59.808945, z: 0}
+  finalTopRightTextBounds: {x: 343.38312, y: 30.387054, z: 0}
+  finalBottomLeftTextBounds: {x: 336.38312, y: 59.808945, z: 0}
+  finalBottomRightTextBounds: {x: 336.38312, y: 30.387054, z: 0}
+  finalCenterTextBounds: {x: 339.88312, y: 45.098, z: 0}
+  unwrappedBottomRightTextBounds: {x: 58.84375, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
       m_Calls: []

@@ -1,11 +1,15 @@
 {
-  "output": [ "#greetings# #descriptions#,  My name is #name#. #thinking# <c=red> #topics# </c>, #question#" ],
-  "name": [ "Jean-Pierre LeFrack"],
+  "output": [ "#greetings# #descriptions#,  My name is #name#. #thinking# #topics#, #question#" ],
+  "name": [ "Jean-Pierre LeFrack" ],
   "greetings": [ "Hello", "Hi", "Bonjour", "Charmed" ],
   "descriptions": [ "mon tresor", "handsome", "darling", "mon cherri" ],
-  "topics": [ "tea", "fracking", "horses"],
-  "thinking": ["My thoughts are consumed by", "I've been musing on"
-  , "My attentions are drawn to", "I am considering"],
-  "often": ["A little", "sometimes", "a lot"],
-  "question": ["What say you?", "What do you zink?", "You are speechless, no?"]
+  "topics": [ "tea", "fracking", "horses" ],
+  "thinking": [
+    "My thoughts are consumed by",
+    "I've been musing on",
+    "My attentions are drawn to",
+    "I am considering"
+  ],
+  "often": [ "A little", "sometimes", "a lot" ],
+  "question": [ "What say you?", "What do you zink?", "You are speechless, no?" ]
 }
