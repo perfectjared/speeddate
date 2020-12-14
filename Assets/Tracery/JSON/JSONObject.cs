@@ -12,11 +12,26 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 /*
- * http://www.opensource.org/licenses/lgpl-2.1.php
- * JSONObject class v.1.4.1
- * for use with Unity
- * Copyright Matt Schoen 2010 - 2013
- */
+Copyright (c) 2010-2019 Matt Schoen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
 
 public class JSONObject {
 #if POOLING
@@ -221,10 +236,10 @@ public class JSONObject {
 	/// Create a JSONObject by parsing string data
 	/// </summary>
 	/// <param name="val">The string to be parsed</param>
-	/// <param name="maxDepth">The maximum depth for the parser to search.  Set this to to 1 for the first level, 
+	/// <param name="maxDepth">The maximum depth for the parser to search.  Set this to to 1 for the first level,
 	/// 2 for the first 2 levels, etc.  It defaults to -2 because -1 is the depth value that is parsed (see below)</param>
 	/// <param name="storeExcessLevels">Whether to store levels beyond maxDepth in baked JSONObjects</param>
-	/// <param name="strict">Whether to be strict in the parsing. For example, non-strict parsing will successfully 
+	/// <param name="strict">Whether to be strict in the parsing. For example, non-strict parsing will successfully
 	/// parse "a string" into a string-type </param>
 	/// <returns></returns>
 	public static JSONObject Create(string val, int maxDepth = -2, bool storeExcessLevels = false, bool strict = false) {
@@ -340,7 +355,7 @@ public class JSONObject {
 #if USEFLOAT
 								n = System.Convert.ToSingle(str);
 #else
-								n = System.Convert.ToDouble(str);				 
+								n = System.Convert.ToDouble(str);
 #endif
 								if(!str.Contains(".")) {
 									i = System.Convert.ToInt64(str);
