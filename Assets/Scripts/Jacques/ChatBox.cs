@@ -41,34 +41,25 @@ public class ChatBox : MonoBehaviour
 		GenerateOutput(newBubble);
 	}
 
-	public GameObject GenerateOutput(GameObject currentBubble)
+	public GameObject GenerateOutput(GameObject newBubble)
 	{
-		activeSpeechBubbles.Add(currentBubble);
-		currentBubble.name = bubbleCount.ToString();
+		activeSpeechBubbles.Add(newBubble);
+		newBubble.name = (bubbleCount - 1).ToString();
+		SuperTextMesh bubbleText = newBubble.GetComponentInChildren<SuperTextMesh>();		
 
+		bubbleText.text = Grammar.Parse("#output#");
+		MoveBubble(newBubble);
 
-		GameObject lastBubble; // The previously spawned chat bubble
-		RectTransform currentPosition = currentBubble.GetComponent<RectTransform>();
-
-		for (int i = 0; i < activeSpeechBubbles.Count; i++)
-		{
-			if(i != 0)
-            {
-				lastBubble = activeSpeechBubbles[i - 1];
-				currentBubble.LeanMoveY(lastBubble.transform.localPosition.y + 100, 1f);
-				MoveBubble(lastBubble.transform, currentPosition, curve);
-			}
-		}
-
-		var stringToParse = Grammar.Parse("output");
-		
-
-		return currentBubble;
+		return newBubble;
 	}
 
-	public void MoveBubble(Transform lastBubbleTransform, RectTransform speechBubble, AnimationCurve motion) 
+	public void MoveBubble(GameObject newBubble) 
     {
-		speechBubble.LeanMoveY(lastBubbleTransform.localPosition.y + 100, 1f).setEase(motion);
+		for (int i = 0; i < activeSpeechBubbles.IndexOf(newBubble); i++)
+		{
+			var activeBubbleTransform = activeSpeechBubbles[i].transform.localPosition;
+			activeSpeechBubbles[i].GetComponent<RectTransform>().LeanMove(new Vector3(activeBubbleTransform.x, activeBubbleTransform.y + 100, 0), 1);
+		}
 	}
 
 	public void DeleteChatBoxes()
@@ -76,6 +67,7 @@ public class ChatBox : MonoBehaviour
 		for(int i = 0; i < activeSpeechBubbles.Count; i++)
         {
 			activeSpeechBubbles.Clear();
+			bubbleCount = 0;
         }
 		
 		foreach(GameObject bubble in GameObject.FindGameObjectsWithTag("SpeechBubble"))
