@@ -33,6 +33,7 @@ public class ChatBox : MonoBehaviour
 		chatWindow = this.GetComponent<RectTransform>();
 	}
 
+	// Instatiates a speech bubble prefab
 	public void SpawnChatBox()
 	{
 		bubbleCount++;
@@ -41,12 +42,18 @@ public class ChatBox : MonoBehaviour
 		GenerateOutput(newBubble);
 	}
 
+	// Fills the instatiated speech bubbles text component with teh desired string from the JSON grammar file
 	public GameObject GenerateOutput(GameObject newBubble)
 	{
-		activeSpeechBubbles.Add(newBubble);
-		newBubble.name = (bubbleCount - 1).ToString();
-		SuperTextMesh bubbleText = newBubble.GetComponentInChildren<SuperTextMesh>();		
+		activeSpeechBubbles.Add(newBubble); // Adds the instantiated bubble to the active bubbles list.
 
+		newBubble.name = (bubbleCount - 1).ToString();
+		SuperTextMesh bubbleText = newBubble.GetComponentInChildren<SuperTextMesh>();
+		
+
+		
+
+		//bubbleText.color = new Color(Color.)
 		bubbleText.text = Grammar.Parse("#output#");
 		MoveBubble(newBubble);
 
