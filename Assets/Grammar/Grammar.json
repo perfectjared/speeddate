@@ -1,8 +1,8 @@
 {
-  "output": [ "#greetings# #descriptions#,  My name is #name#. #thinking# <c=red> #topics# </c>, #question#" ],
+  "output": [ "#greetings# #descriptions#. My name is #name#. #thinking# <c=red>#topics#</c>. #question#" ],
   "name": [ "Jean-Pierre LeFrack"],
-  "greetings": [ "Hello", "Hi", "Bonjour", "Charmed" ],
-  "descriptions": [ "mon tresor", "handsome", "darling", "mon cherri" ],
+  "greetings": [ "Hello", "Greetings", "Bonjour", "Charmed", "'allo" ],
+  "descriptions": [ "mon tresor", "handsome", "darling", "mon cherri", "dearest" ],
   "topics": [ "tea", "fracking", "horses"],
   "thinking": ["My thoughts are consumed by", "I've been musing on"
   , "My attentions are drawn to", "I am considering"],
