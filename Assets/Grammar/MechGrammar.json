@@ -7,5 +7,14 @@
   "thinking": ["I read up on", "Been thinking bout"
   , "I've been hearing things about", "I watched a movie about"],
   "often": ["A little", "sometimes", "a lot"],
-  "question": ["right?", "you know?", "you get me?", "yeah?"]
+  "question": ["right?", "you know?", "you get me?", "yeah?"],
+
+"feeling": ["I & it.", "My studies would imply that I & it.",
+  "According to my sensors, I & it.", "I & it. At least I think I do."],
+"topic": ["What do you think about $?", "Lately I've been looking into $.",
+"Sooooooooo...$? Am I right?", "I've been thinking 'bout $ a lot."],
+"feelingTopic" : ["Oh, that reminds of $. I & that.", "What do you think about $? Honestly, I kinda & it",
+"I've been reading about $. I think I & it."],
+"smallTalk" : ["Sooooooo...What's updog?" "*Cough*"
+, "How's it going?", "Sorry, I'm not much for small talk"]
 }
