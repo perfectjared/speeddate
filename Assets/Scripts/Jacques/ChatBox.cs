@@ -61,13 +61,9 @@ public class ChatBox : MonoBehaviour
     public void SpawnSpeechBubble()
 	{
 		var newBubble = Instantiate(speechBubble, chatWindow);
-<<<<<<< HEAD
-=======
-
 		var tempMessage = newBubble.AddComponent<Message>();
 		tempMessage = bubbleMessage;
 
->>>>>>> jared
 		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
 		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
 		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);

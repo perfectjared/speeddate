@@ -16,7 +16,7 @@ public class Tips : MonoBehaviour
 
     public void Combo()
     {
-        ToolTips.ShowTooltip_Static("Flow Meter: Reflects teh speed of the conversation");
+        ToolTips.ShowTooltip_Static("Flow Meter: Reflects the speed of the conversation");
     }
 
     public void Time()
