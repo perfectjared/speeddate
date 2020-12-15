@@ -7,25 +7,22 @@ using UnityTracery;
 public class ChatBox : MonoBehaviour
 {
 	public TextAsset GrammarFile;
-	public SuperTextMesh TextOutput;
+	public SuperTextMesh message;
 	public TraceryGrammar Grammar;
 	public RectTransform chatWindow;
 	public GameObject speechBubble;
 
 	public int bubbleCount = 0;
+	public bool fadeText;
 
 	public AnimationCurve curve;
 
 	[SerializeField]
 	private List<GameObject> activeSpeechBubbles;
-	
-	public struct SpeechBubble
-    {
-		SuperTextMesh text;
-		RectTransform position;
-		RawImage img;		
-    }
 
+	[SerializeField]
+	private List<GameObject> activeResponseBubbles;
+	
     private void Start()
 	{
 		Debug.Log("GrammarFile text: " + GrammarFile.text);
@@ -33,49 +30,66 @@ public class ChatBox : MonoBehaviour
 		chatWindow = this.GetComponent<RectTransform>();
 	}
 
-	public void SpawnChatBox()
+    private void Update()
+    {
+		// Deletes speech bubble if they above the chat window
+        for(int i = 0; i < activeSpeechBubbles.Count; i++)
+        {
+			activeSpeechBubbles[i].name = i.ToString();
+			if (activeSpeechBubbles[i].transform.localPosition.y > 84)
+            {
+				var speechBubbleText = activeSpeechBubbles[i].GetComponentInChildren<SuperTextMesh>();
+				speechBubbleText.enabled = false;
+				Destroy(activeSpeechBubbles[i]);
+				activeSpeechBubbles.RemoveAt(i);
+				
+			}
+        }
+    }
+
+    // Instatiates a speech bubble prefab
+    public void SpawnSpeechBubble()
 	{
 		bubbleCount++;
 		var newBubble = Instantiate(speechBubble, chatWindow);
-		TextOutput = newBubble.GetComponent<SuperTextMesh>();
+
+		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
+		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
+		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
+
+		message = newBubble.GetComponentInChildren<SuperTextMesh>();
+		fadeText = true;
 		GenerateOutput(newBubble);
+		MoveBubble(newBubble);
 	}
 
-	public GameObject GenerateOutput(GameObject currentBubble)
+	// Fills the instatiated speech bubbles text component with teh desired string from the JSON grammar file
+	public GameObject GenerateOutput(GameObject newBubble)
 	{
-		activeSpeechBubbles.Add(currentBubble);
-		currentBubble.name = bubbleCount.ToString();
-
-
-		GameObject lastBubble; // The previously spawned chat bubble
-		RectTransform currentPosition = currentBubble.GetComponent<RectTransform>();
-
-		for (int i = 0; i < activeSpeechBubbles.Count; i++)
-		{
-			if(i != 0)
-            {
-				lastBubble = activeSpeechBubbles[i - 1];
-				currentBubble.LeanMoveY(lastBubble.transform.localPosition.y + 100, 1f);
-				MoveBubble(lastBubble.transform, currentPosition, curve);
-			}
-		}
-
-		var stringToParse = Grammar.Parse("output");
-		
-
-		return currentBubble;
+		activeSpeechBubbles.Add(newBubble); // Adds the instantiated bubble to the active bubbles list.
+		//newBubble.name = (bubbleCount - 1).ToString();
+		message.text = Grammar.Parse("#greetings# #descriptions#,  My name is <c=black><b>#name#</b></c>. #thinking# <c=red>#topics#</c>, #question#");
+		return newBubble;
 	}
 
-	public void MoveBubble(Transform lastBubbleTransform, RectTransform speechBubble, AnimationCurve motion) 
+	// Moves the older chat messages upwards
+	public void MoveBubble(GameObject newBubble) 
     {
-		speechBubble.LeanMoveY(lastBubbleTransform.localPosition.y + 100, 1f).setEase(motion);
+		for (int i = 0; i < activeSpeechBubbles.IndexOf(newBubble); i++)
+		{
+			var activeBubbleTransform = activeSpeechBubbles[i].transform.localPosition;
+			activeSpeechBubbles[i].GetComponent<RectTransform>().LeanMove(new Vector3(activeBubbleTransform.x, activeBubbleTransform.y + 110, 0), 0.5f).setEaseSpring();
+			//message.color = Color.Lerp(Color.clear, Color.black, 0.5f);
+		}
 	}
 
+	//Deletes all chat boxes and clears the activeSpeechBubble List
 	public void DeleteChatBoxes()
     {
 		for(int i = 0; i < activeSpeechBubbles.Count; i++)
         {
 			activeSpeechBubbles.Clear();
+			bubbleCount = 0;
         }
 		
 		foreach(GameObject bubble in GameObject.FindGameObjectsWithTag("SpeechBubble"))
@@ -83,4 +97,6 @@ public class ChatBox : MonoBehaviour
 			Destroy(bubble);
         }
     }
+
+
 }

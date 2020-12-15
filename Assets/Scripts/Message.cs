@@ -28,6 +28,7 @@ public class Message : MonoBehaviour
         new Message();
     }
 
+<<<<<<< HEAD
     public void randomMessage() {
         this.messageType = (MessageType)Random.Range(0,4);
         this.topic = (Character.Topic)Random.Range(0, 10);
@@ -41,4 +42,16 @@ public class Message : MonoBehaviour
     //private string GenerateSentence() {
     //    this.sentence = "";
     //}
+=======
+    public Message(MessageType messageType, Character.Topic topic, float feeling) {
+        this.messageType = messageType;
+        this.topic = topic;
+        this.feeling = feeling;
+        //GenerateSentence();
+    }
+
+    private void GenerateSentence() {
+        this.sentence = "";
+    }
+>>>>>>> main
 }
