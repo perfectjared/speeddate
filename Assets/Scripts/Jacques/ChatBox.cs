@@ -7,12 +7,13 @@ using UnityTracery;
 public class ChatBox : MonoBehaviour
 {
 	public TextAsset GrammarFile;
-	public SuperTextMesh TextOutput;
+	public SuperTextMesh message;
 	public TraceryGrammar Grammar;
 	public RectTransform chatWindow;
 	public GameObject speechBubble;
 
 	public int bubbleCount = 0;
+	public bool fadeText;
 
 	public AnimationCurve curve;
 
@@ -33,30 +34,47 @@ public class ChatBox : MonoBehaviour
 		chatWindow = this.GetComponent<RectTransform>();
 	}
 
-	// Instatiates a speech bubble prefab
-	public void SpawnChatBox()
+    private void Update()
+    {
+
+		// Deletes speech bubble if they above the chat window
+        for(int i = 0; i < activeSpeechBubbles.Count; i++)
+        {
+			activeSpeechBubbles[i].name = i.ToString();
+			if (activeSpeechBubbles[i].transform.localPosition.y > 84)
+            {
+				var speechBubbleText = activeSpeechBubbles[i].GetComponentInChildren<SuperTextMesh>();
+				speechBubbleText.enabled = false;
+				Destroy(activeSpeechBubbles[i]);
+				activeSpeechBubbles.RemoveAt(i);
+				
+			}
+        }
+    }
+
+    // Instatiates a speech bubble prefab
+    public void SpawnChatBox()
 	{
 		bubbleCount++;
 		var newBubble = Instantiate(speechBubble, chatWindow);
-		TextOutput = newBubble.GetComponent<SuperTextMesh>();
+
+		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
+		newBubble.GetComponent<RectTransform>().LeanAlpha(1, 0.5f);
+		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
+
+
+		message = newBubble.GetComponentInChildren<SuperTextMesh>();
+		fadeText = true;
 		GenerateOutput(newBubble);
+		MoveBubble(newBubble);
 	}
 
 	// Fills the instatiated speech bubbles text component with teh desired string from the JSON grammar file
 	public GameObject GenerateOutput(GameObject newBubble)
 	{
 		activeSpeechBubbles.Add(newBubble); // Adds the instantiated bubble to the active bubbles list.
-
-		newBubble.name = (bubbleCount - 1).ToString();
-		SuperTextMesh bubbleText = newBubble.GetComponentInChildren<SuperTextMesh>();
-		
-
-		
-
-		//bubbleText.color = new Color(Color.)
-		bubbleText.text = Grammar.Parse("#output#");
-		MoveBubble(newBubble);
-
+		//newBubble.name = (bubbleCount - 1).ToString();
+		message.text = Grammar.Parse("#greetings# #descriptions#,  My name is <c=black><b>#name#</b></c>. #thinking# <c=red>#topics#</c>, #question#");
 		return newBubble;
 	}
 
@@ -65,7 +83,8 @@ public class ChatBox : MonoBehaviour
 		for (int i = 0; i < activeSpeechBubbles.IndexOf(newBubble); i++)
 		{
 			var activeBubbleTransform = activeSpeechBubbles[i].transform.localPosition;
-			activeSpeechBubbles[i].GetComponent<RectTransform>().LeanMove(new Vector3(activeBubbleTransform.x, activeBubbleTransform.y + 100, 0), 1);
+			activeSpeechBubbles[i].GetComponent<RectTransform>().LeanMove(new Vector3(activeBubbleTransform.x, activeBubbleTransform.y + 110, 0), 0.5f).setEaseSpring();
+			message.color = Color.Lerp(Color.clear, Color.black, 0.5f);
 		}
 	}
 
