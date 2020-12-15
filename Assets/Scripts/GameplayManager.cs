@@ -15,11 +15,12 @@ public class GameplayManager : Singleton<GameplayManager>
     private int round = 0;
 
     [SerializeField]
-    public float flow = 0f;
+    [Range(0.1f, 0f)]
+    public float flow = 0.1f;
     [SerializeField]
     private GameObject shotObject;
 
-    public Character.Topic topic;
+    public Character.Topic topic = Character.Topic.None;
     
     public _UnityEventFloat affectionChange;
     public _UnityEventFloat flowChange;
@@ -60,5 +61,9 @@ public class GameplayManager : Singleton<GameplayManager>
 
     public void FlowChange(float value) {
         flowChange.Invoke(value); //send to UI
+    }
+
+    public void CharacterSpeak(Message message) {
+        this.topic = message.topic;
     }
 }

@@ -6,7 +6,7 @@ using NaughtyAttributes;
 public class Character : MonoBehaviour
 {
     public enum Topic { 
-        Hiking, Fracking, Cats, Dogs, Baking, Reading, TV, Coffee, Tea, Gardening
+        None, Hiking, Fracking, Cats, Dogs, Baking, Reading, TV, Coffee, Tea, Gardening
     };
     
     [Range(0.0f, 100.0f)]
@@ -19,6 +19,7 @@ public class Character : MonoBehaviour
     [Range(0.1f, 1.0f)]
     public float speechRate = 0.5f;
     private int speechSinceSubjectChange = 0;
+    private Character.Topic topic;
 
     void Update() {
         if (active) {
@@ -69,38 +70,41 @@ public class Character : MonoBehaviour
         ReceiveMessage(new Message());
     }
 
+    [Button]
     private void Speak() {
         Message.MessageType messageType;
-        Character.Topic topic = this.topic;
         int feeling;
+        Character.Topic topic;
 
         int changeSubject = Random.Range(0, speechSinceSubjectChange);
-        if (changeSubject > 2) {
+        if (changeSubject > 2 || this.topic == Topic.None) {
             //change subject
-            if (Random.Range(0, 1) > 0) {
+            if (Random.Range(0, 2) > 0) {
                 messageType = Message.MessageType.Topic;
             } else {
                 messageType = Message.MessageType.FeelingTopic;
             }
-            topic = (Character.Topic)Random.Range(0, 10);
+            ChangeTopic();
         } else {
             //don't change subject
-            if (Random.Range(0, 1) > 0) {
+            if (Random.Range(0, 4) > 0) {
                 messageType = Message.MessageType.Feeling;
             } else {
                 messageType = Message.MessageType.SmallTalk;
             }
+            topic = this.topic;
             speechSinceSubjectChange++;
         }
 
-        feeling = sentiments[topic];
-    }
-
-    public void ReceiveFlow(float flow) {
-        this.flow = flow;
+        feeling = sentiments[(int)this.topic];
+        Message message = new Message(messageType, this.topic, feeling);
+        GameplayManager.Instance.CharacterSpeak(message);
     }
 
     private void ChangeTopic() {
+        Character.Topic oldTopic = this.topic;
+        while (this.topic == oldTopic) this.topic = (Character.Topic)Random.Range(1, 10);
         speechSinceSubjectChange = 0;
+        Debug.Log("topic change");
     }
 }
