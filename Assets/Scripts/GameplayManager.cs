@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 enum State { Start, Play, Transition, Pause, Cutscene, End};
 public class GameplayManager : Singleton<GameplayManager>
@@ -9,7 +10,7 @@ public class GameplayManager : Singleton<GameplayManager>
     private Character character;
     [SerializeField]
     private int characterAt = 0;
-    private List<Character> characters = new List<Character>();
+    public List<GameObject> characters = new List<GameObject>();
 
     [SerializeField]
     private int round = 0;
@@ -38,6 +39,7 @@ public class GameplayManager : Singleton<GameplayManager>
 
     }
 
+    [Button]
     private void NextCharacter() {
         characterAt++;
         
@@ -46,7 +48,7 @@ public class GameplayManager : Singleton<GameplayManager>
             characterAt = 1;
         }
 
-        character = characters[characterAt - 1];
+        character = characters[characterAt - 1].GetComponent<Character>();
     }
 
     public void ShotObject(GameObject shotObject) {
@@ -65,5 +67,10 @@ public class GameplayManager : Singleton<GameplayManager>
 
     public void CharacterSpeak(Message message) {
         this.topic = message.topic;
+    }
+
+    public void ReceiveMessage(Message message) {
+        this.topic = message.topic;
+        character.ReceiveMessage(message);
     }
 }

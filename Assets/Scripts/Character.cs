@@ -66,11 +66,6 @@ public class Character : MonoBehaviour
     }
 
     [Button]
-    public void Test() {
-        ReceiveMessage(new Message());
-    }
-
-    [Button]
     private void Speak() {
         Message.MessageType messageType;
         int feeling;
@@ -105,6 +100,6 @@ public class Character : MonoBehaviour
         Character.Topic oldTopic = this.topic;
         while (this.topic == oldTopic) this.topic = (Character.Topic)Random.Range(1, 10);
         speechSinceSubjectChange = 0;
-        Debug.Log("topic change");
+        //Debug.Log("topic change");
     }
 }

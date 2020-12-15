@@ -19,7 +19,7 @@ public class Message : MonoBehaviour
         this.messageType = messageType;
         this.topic = topic;
         this.feeling = feeling;
-        Debug.Log("message: " + messageType.ToString() + ", topic: " + topic.ToString() + ", feeling: " + feeling);
+        //Debug.Log("message: " + messageType.ToString() + ", topic: " + topic.ToString() + ", feeling: " + feeling);
         } else { randomMessage(); }
     }
 
