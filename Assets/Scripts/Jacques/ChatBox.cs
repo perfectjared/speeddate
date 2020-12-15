@@ -57,17 +57,11 @@ public class ChatBox : MonoBehaviour
 		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
 		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
 
-
 		message = newBubble.GetComponentInChildren<SuperTextMesh>();
 		fadeText = true;
 		GenerateOutput(newBubble);
 		MoveBubble(newBubble);
 	}
-
-	public void SpawnResponseBubble()
-    {
-		//var topResponse = Instantiate();
-    }
 
 	// Fills the instatiated speech bubbles text component with teh desired string from the JSON grammar file
 	public GameObject GenerateOutput(GameObject newBubble)
