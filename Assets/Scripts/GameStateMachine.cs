@@ -10,7 +10,7 @@ using NaughtyAttributes;
 [System.Serializable] public class _UnityEventMessage:UnityEvent<Message> {}
 [System.Serializable] public class _UnityEventString:UnityEvent<string>{}
 
-public class GameStateMachine : MonoBehaviour
+public class GameStateMachine : Singleton<GameStateMachine>
 {
     public List<StateInterface> states = new List<StateInterface>();
 

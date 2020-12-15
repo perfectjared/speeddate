@@ -12,10 +12,12 @@ public class Topic_UI : MonoBehaviour
     void Start()
     {
         stm = GetComponent<SuperTextMesh>();   
+        topic = defaultTopic;
+        ChangeText();
     }
 
-    public void ReceiveTopic(Character.Topic topic) {
-        //TODO: FIXthis.topic = topic;
+    public void ReceiveTopic(string topic) {
+        this.topic = topic;
         ChangeText();
     }
 

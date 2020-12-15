@@ -19,6 +19,8 @@ public class GameplayManager : Singleton<GameplayManager>
     [SerializeField]
     [Range(0.1f, 0.5f)]
     public float flow = 0.1f;
+    [Range(0.01f, 0.1f)]
+    public float flowAdd = 0.05f;
     [SerializeField]
     private GameObject shotObject;
 
@@ -26,32 +28,65 @@ public class GameplayManager : Singleton<GameplayManager>
     
     public _UnityEventFloat affectionChange;
     public _UnityEventFloat flowChange;
+    public _UnityEventString topicChange;
+
+    private Timer timer;
 
 
     void Start() {
-
+        timer = GetComponent<Timer>();
     }
 
     public void StartPlay() {
         NextCharacter();
     }
 
-    void Update() {
+    public void EndPlay() {
+        Debug.Log("The End");
+    }
 
+    void Update() {
+        if (character) AffectionChange(character.affection);
+        if (flow > 0.1f) flow -= Time.deltaTime * 0.025f;
+        if (flow < 0.1f) flow = 0.1f;
+        FlowChange(flow);
     }
 
     [Button]
     private void NextCharacter() {
         if (character) character.Denitialize();
+        flow = 0.1f;
         characterAt++;
         
-        if (characterAt > characters.Count - 1) {
+        if (characterAt > characters.Count) {
             round++;
             characterAt = 1;
         }
 
-        character = characters[characterAt - 1].GetComponent<Character>();
-        character.Initialize();
+        if (round == 3) {
+            GameStateMachine.Instance.Next();
+        } else {
+            character = characters[characterAt - 1].GetComponent<Character>();
+            character.Initialize();
+            timer.Reset();
+            timer.StartTimer();
+            ChangeTopic(Character.Topic.None);
+            StartCoroutine(WaitForTimer());
+        }
+    }
+
+    [Button]
+    public void RespondRandomly() {
+        character.ReceiveMessage(new Message());
+        flow += flowAdd;
+    }
+
+    private IEnumerator WaitForTimer() {
+        while (timer.Running()) {
+            yield return new WaitForEndOfFrame();
+        }
+        NextCharacter();
+        yield return new WaitForEndOfFrame();
     }
 
     public void ShotObject(GameObject shotObject) {
@@ -69,13 +104,18 @@ public class GameplayManager : Singleton<GameplayManager>
     }
 
     public void CharacterSpeak(Message message) {
-        this.topic = message.topic;
+        ChangeTopic(message.topic);
         chatBox.ReceiveMessage(message);
     }
 
     public void ReceiveMessage(Message message) {
-        this.topic = message.topic;
+        ChangeTopic(message.topic);
         character.ReceiveMessage(message);
         chatBox.ReceiveMessage(message, false);
+    }
+
+    private void ChangeTopic(Character.Topic topic) {
+        this.topic = topic;
+        topicChange.Invoke(topic.ToString());
     }
 }
