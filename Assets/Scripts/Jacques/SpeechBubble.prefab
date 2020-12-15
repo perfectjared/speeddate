@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -106,7 +106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.46, y: 2.28}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
   m_SizeDelta: {x: 200.24557, y: 59.168396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6973756449859818453
@@ -132,7 +132,7 @@ MonoBehaviour:
   showAppearanceFoldout: 1
   showMaterialFoldout: 0
   showPositionFoldout: 1
-  showTimingFoldout: 0
+  showTimingFoldout: 1
   showFunctionalityFoldout: 0
   showAudioFoldout: 0
   showEventFoldout: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
     size: 14
     alignment: 1
-    drawOrder: 0
+    drawOrder: 2
     ev: []
     ev2: []
     colorData: {fileID: 0}
@@ -155,7 +155,7 @@ MonoBehaviour:
     delayData: {fileID: 0}
     waveData: {fileID: 0}
     jitterData: {fileID: 0}
-    readDelay: 0
+    readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
     pitchMode: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
     size: 14
     alignment: 1
-    drawOrder: 0
+    drawOrder: 2
     ev: []
     ev2: []
     colorData: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
     delayData: {fileID: 0}
     waveData: {fileID: 0}
     jitterData: {fileID: 0}
-    readDelay: 0
+    readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
     pitchMode: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
     size: 14
     alignment: 1
-    drawOrder: 0
+    drawOrder: 2
     ev: []
     ev2: []
     colorData: {fileID: 0}
@@ -223,7 +223,7 @@ MonoBehaviour:
     delayData: {fileID: 0}
     waveData: {fileID: 0}
     jitterData: {fileID: 0}
-    readDelay: 0
+    readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
     pitchMode: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
     size: 14
     alignment: 1
-    drawOrder: 0
+    drawOrder: 2
     ev: []
     ev2: []
     colorData: {fileID: 0}
@@ -257,7 +257,7 @@ MonoBehaviour:
     delayData: {fileID: 0}
     waveData: {fileID: 0}
     jitterData: {fileID: 0}
-    readDelay: 0
+    readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
     pitchMode: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
     size: 14
     alignment: 1
-    drawOrder: 0
+    drawOrder: 2
     ev: []
     ev2: []
     colorData: {fileID: 0}
@@ -291,7 +291,7 @@ MonoBehaviour:
     delayData: {fileID: 0}
     waveData: {fileID: 0}
     jitterData: {fileID: 0}
-    readDelay: 0
+    readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
     pitchMode: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
     size: 14
     alignment: 1
-    drawOrder: 0
+    drawOrder: 2
     ev: []
     ev2: []
     colorData: {fileID: 0}
@@ -325,7 +325,7 @@ MonoBehaviour:
     delayData: {fileID: 0}
     waveData: {fileID: 0}
     jitterData: {fileID: 0}
-    readDelay: 0
+    readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
     pitchMode: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
     size: 14
     alignment: 1
-    drawOrder: 0
+    drawOrder: 2
     ev: []
     ev2: []
     colorData: {fileID: 0}
@@ -359,7 +359,7 @@ MonoBehaviour:
     delayData: {fileID: 0}
     waveData: {fileID: 0}
     jitterData: {fileID: 0}
-    readDelay: 0
+    readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
     pitchMode: 0
@@ -384,7 +384,7 @@ MonoBehaviour:
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
     size: 14
     alignment: 1
-    drawOrder: 0
+    drawOrder: 2
     ev: []
     ev2: []
     colorData: {fileID: 0}
@@ -393,7 +393,7 @@ MonoBehaviour:
     delayData: {fileID: 0}
     waveData: {fileID: 0}
     jitterData: {fileID: 0}
-    readDelay: 0
+    readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
     pitchMode: 0
@@ -417,9 +417,9 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4281479730
   richText: 1
-  readDelay: 0
+  readDelay: 0.1
   speedReadScale: 2
-  ignoreTimeScale: 1
+  ignoreTimeScale: 0
   disableAnimatedText: 0
   drawAnimName: Appear
   unreadDelay: 0.05
@@ -460,21 +460,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
   rawBottomRightTextBounds: {x: 58.84375, y: -14, z: 0}
-  topLeftBounds: {x: 343.38312, y: 95.15939, z: 0}
-  topRightBounds: {x: 343.38312, y: -4.963379, z: 0}
-  bottomLeftBounds: {x: 313.7989, y: 95.15941, z: 0}
-  bottomRightBounds: {x: 313.7989, y: -4.963379, z: 0}
-  centerBounds: {x: 328.591, y: 45.098007, z: 0}
-  topLeftTextBounds: {x: 343.38312, y: 59.808945, z: 0}
-  topRightTextBounds: {x: 343.38312, y: 30.387054, z: 0}
-  bottomLeftTextBounds: {x: 336.38312, y: 59.808945, z: 0}
-  bottomRightTextBounds: {x: 336.38312, y: 30.387054, z: 0}
-  centerTextBounds: {x: 339.88312, y: 45.098, z: 0}
-  finalTopLeftTextBounds: {x: 343.38312, y: 59.808945, z: 0}
-  finalTopRightTextBounds: {x: 343.38312, y: 30.387054, z: 0}
-  finalBottomLeftTextBounds: {x: 336.38312, y: 59.808945, z: 0}
-  finalBottomRightTextBounds: {x: 336.38312, y: 30.387054, z: 0}
-  finalCenterTextBounds: {x: 339.88312, y: 45.098, z: 0}
+  topLeftBounds: {x: 342.2431, y: 86.4294, z: 0}
+  topRightBounds: {x: 342.2431, y: -13.69342, z: 0}
+  bottomLeftBounds: {x: 312.6589, y: 86.4294, z: 0}
+  bottomRightBounds: {x: 312.6589, y: -13.69342, z: 0}
+  centerBounds: {x: 327.451, y: 36.36799, z: 0}
+  topLeftTextBounds: {x: 342.2431, y: 51.078934, z: 0}
+  topRightTextBounds: {x: 342.2431, y: 21.657059, z: 0}
+  bottomLeftTextBounds: {x: 335.2431, y: 51.078934, z: 0}
+  bottomRightTextBounds: {x: 335.2431, y: 21.657059, z: 0}
+  centerTextBounds: {x: 338.7431, y: 36.367996, z: 0}
+  finalTopLeftTextBounds: {x: 342.2431, y: 51.078934, z: 0}
+  finalTopRightTextBounds: {x: 342.2431, y: 21.657059, z: 0}
+  finalBottomLeftTextBounds: {x: 335.2431, y: 51.078934, z: 0}
+  finalBottomRightTextBounds: {x: 335.2431, y: 21.657059, z: 0}
+  finalCenterTextBounds: {x: 338.7431, y: 36.367996, z: 0}
   unwrappedBottomRightTextBounds: {x: 58.84375, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
@@ -504,7 +504,7 @@ MonoBehaviour:
   autoRead: 1
   rememberReadPosition: 1
   autoQuality: 0
-  drawOrder: 0
+  drawOrder: 2
   bestFit: 0
   latestNumber: 7
   currentUnReadTime: 0

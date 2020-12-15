@@ -36,11 +36,18 @@ public class ChatBox : MonoBehaviour
 
     private void Update()
     {
+
+		// Deletes speech bubble if they above the chat window
         for(int i = 0; i < activeSpeechBubbles.Count; i++)
         {
-			if (activeSpeechBubbles[i].transform.localPosition.y > 84 && fadeText)
+			activeSpeechBubbles[i].name = i.ToString();
+			if (activeSpeechBubbles[i].transform.localPosition.y > 84)
             {
-				var speechBubbleRawImage = activeSpeechBubbles[i].GetComponent<RawImage>();
+				var speechBubbleText = activeSpeechBubbles[i].GetComponentInChildren<SuperTextMesh>();
+				speechBubbleText.enabled = false;
+				Destroy(activeSpeechBubbles[i]);
+				activeSpeechBubbles.RemoveAt(i);
+				
 			}
         }
     }
@@ -66,7 +73,7 @@ public class ChatBox : MonoBehaviour
 	public GameObject GenerateOutput(GameObject newBubble)
 	{
 		activeSpeechBubbles.Add(newBubble); // Adds the instantiated bubble to the active bubbles list.
-		newBubble.name = (bubbleCount - 1).ToString();
+		//newBubble.name = (bubbleCount - 1).ToString();
 		message.text = Grammar.Parse("#greetings# #descriptions#,  My name is <c=black><b>#name#</b></c>. #thinking# <c=red>#topics#</c>, #question#");
 		return newBubble;
 	}
@@ -76,16 +83,10 @@ public class ChatBox : MonoBehaviour
 		for (int i = 0; i < activeSpeechBubbles.IndexOf(newBubble); i++)
 		{
 			var activeBubbleTransform = activeSpeechBubbles[i].transform.localPosition;
-			activeSpeechBubbles[i].GetComponent<RectTransform>().LeanMove(new Vector3(activeBubbleTransform.x, activeBubbleTransform.y + 100, 0), 0.5f);
+			activeSpeechBubbles[i].GetComponent<RectTransform>().LeanMove(new Vector3(activeBubbleTransform.x, activeBubbleTransform.y + 110, 0), 0.5f).setEaseSpring();
 			message.color = Color.Lerp(Color.clear, Color.black, 0.5f);
 		}
 	}
-
-	public void FadeBoxes()
-    {
-		message.GetComponent<RectTransform>().LeanAlphaText(0, 0.5f);
-		fadeText = false;
-    }
 
 	public void DeleteChatBoxes()
     {
