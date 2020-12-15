@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
     private float flow = 0.1f;
     public bool active = false;
     public List<int> sentiments = new List<int>();
-    private float timeToSpeak = 0.0f;
+    private float timeToSpeak = 0.1f;
     [Range(0.1f, 1.0f)]
     public float speechRate = 0.5f;
     private int speechSinceSubjectChange = 0;
@@ -40,7 +40,7 @@ public class Character : MonoBehaviour
 
     public void Denitialize() {
         active = false;
-        timeToSpeak = 0f;
+        timeToSpeak = .1f;
     }
 
     public void ReceiveMessage(Message msg) {

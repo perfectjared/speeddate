@@ -11,12 +11,13 @@ public class GameplayManager : Singleton<GameplayManager>
     [SerializeField]
     private int characterAt = 0;
     public List<GameObject> characters = new List<GameObject>();
+    public ChatBox chatBox;
 
     [SerializeField]
     private int round = 0;
 
     [SerializeField]
-    [Range(0.1f, 0f)]
+    [Range(0.1f, 0.5f)]
     public float flow = 0.1f;
     [SerializeField]
     private GameObject shotObject;
@@ -41,6 +42,7 @@ public class GameplayManager : Singleton<GameplayManager>
 
     [Button]
     private void NextCharacter() {
+        if (character) character.Denitialize();
         characterAt++;
         
         if (characterAt > characters.Count - 1) {
@@ -49,6 +51,7 @@ public class GameplayManager : Singleton<GameplayManager>
         }
 
         character = characters[characterAt - 1].GetComponent<Character>();
+        character.Initialize();
     }
 
     public void ShotObject(GameObject shotObject) {
@@ -67,10 +70,12 @@ public class GameplayManager : Singleton<GameplayManager>
 
     public void CharacterSpeak(Message message) {
         this.topic = message.topic;
+        chatBox.ReceiveMessage(message);
     }
 
     public void ReceiveMessage(Message message) {
         this.topic = message.topic;
         character.ReceiveMessage(message);
+        chatBox.ReceiveMessage(message, false);
     }
 }

@@ -12,14 +12,14 @@ public class Message : MonoBehaviour
     public MessageType messageType;
     public Character.Topic topic;
     public float feeling;
-    private string sentence;
+    public string sentence;
 
     public Message(MessageType messageType = MessageType.Topic, Character.Topic topic = 0, float feeling = 99) {
         if (feeling != 99) { 
         this.messageType = messageType;
         this.topic = topic;
         this.feeling = feeling;
-        //Debug.Log("message: " + messageType.ToString() + ", topic: " + topic.ToString() + ", feeling: " + feeling);
+        this.sentence = ("message: " + messageType.ToString() + ", topic: " + topic.ToString() + ", feeling: " + feeling);
         } else { randomMessage(); }
     }
 
