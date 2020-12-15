@@ -7,6 +7,14 @@
   "thinking": ["My thoughts are consumed by", "I've been musing on"
   , "My attentions are drawn to", "I am considering", "I am thinking of", "I am pondering"],
   "often": ["A little", "sometimes", "a lot"],
-  "question": ["What say you?", "Worth considering is it not?",
-    "What do you zink?", "You are speechless, no?", "'ave you something to say?"]
+  "question": ["what say you?", "worth considering is it not?",
+    "what do you zink?", "you are speechless, no?", "'ave you something to say?"],
+
+  "feeling": ["The more I linger on it, the more I feel &", "I am enveloped by &",
+    "Is this ennui I feel? No, it's &", "This brings me naught but &"],
+  "topic": ["I doubt you 'ave, but I have studied $", "Let us speak of $",
+  "Enough games. I must talk of $", "And so the conversation turns naturally to $"],
+  "feeling/topic" : [""]
+
+
 }
