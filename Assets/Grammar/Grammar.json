@@ -10,11 +10,14 @@
   "question": ["what say you?", "worth considering is it not?",
     "what do you zink?", "you are speechless, no?", "'ave you something to say?"],
 
-  "feeling": ["The more I linger on it, the more I feel &", "I am enveloped by &",
-    "Is this ennui I feel? No, it's &", "This brings me naught but &"],
+  "feeling": ["The more I linger on it, the more I & it", "I am enveloped by & towards it",
+    "Is this ennui I feel? No, I simply & it", "This brings me naught but feelings of & when I dwell on it"],
   "topic": ["I doubt you 'ave, but I have studied $", "Let us speak of $",
   "Enough games. I must talk of $", "And so the conversation turns naturally to $"],
-  "feeling/topic" : [""]
+  "feelingTopic" : ["Ah, this makes me think of $. I suppose I & it.", "But what of $? Personally, I & it",
+  "I have visions of $. I assure you that I & it."],
+  "smallTalk" : ["I zink you would look lovely in the moonlight." "I am incredibly wealthy. Impressive, no?"
+  , "I weep when I see a lonesome cloud", "I am making ze small talk"]
 
 
 }
