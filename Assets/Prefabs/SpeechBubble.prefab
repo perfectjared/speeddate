@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6973756448838126681}
   - component: {fileID: 6973756448838126683}
   - component: {fileID: 6973756448838126682}
+  - component: {fileID: 1072909099784865277}
   m_Layer: 0
   m_Name: SpeechBubble
   m_TagString: SpeechBubble
@@ -72,6 +73,49 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &1072909099784865277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6973756448838126680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 6973756448838126682}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6973756449859818410
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,21 +504,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
   rawBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
-  topLeftBounds: {x: 346.21033, y: 77.4294, z: 0}
-  topRightBounds: {x: 346.2103, y: -22.69342, z: 0}
-  bottomLeftBounds: {x: 316.6261, y: 77.4294, z: 0}
-  bottomRightBounds: {x: 316.6261, y: -22.69339, z: 0}
-  centerBounds: {x: 331.4182, y: 27.368004, z: 0}
-  topLeftTextBounds: {x: 346.21033, y: 42.691437, z: 0}
-  topRightTextBounds: {x: 346.21033, y: 12.044556, z: 0}
-  bottomLeftTextBounds: {x: 339.21033, y: 42.691437, z: 0}
-  bottomRightTextBounds: {x: 339.21033, y: 12.044556, z: 0}
-  centerTextBounds: {x: 342.71033, y: 27.367996, z: 0}
-  finalTopLeftTextBounds: {x: 346.21033, y: 42.691437, z: 0}
-  finalTopRightTextBounds: {x: 346.21033, y: 12.044556, z: 0}
-  finalBottomLeftTextBounds: {x: 339.21033, y: 42.691437, z: 0}
-  finalBottomRightTextBounds: {x: 339.21033, y: 12.044556, z: 0}
-  finalCenterTextBounds: {x: 342.71033, y: 27.367996, z: 0}
+  topLeftBounds: {x: 395.21033, y: 105.4294, z: 0}
+  topRightBounds: {x: 395.2103, y: 5.3065796, z: 0}
+  bottomLeftBounds: {x: 365.6261, y: 105.4294, z: 0}
+  bottomRightBounds: {x: 365.6261, y: 5.30661, z: 0}
+  centerBounds: {x: 380.4182, y: 55.368004, z: 0}
+  topLeftTextBounds: {x: 395.21033, y: 70.69144, z: 0}
+  topRightTextBounds: {x: 395.21033, y: 40.044556, z: 0}
+  bottomLeftTextBounds: {x: 388.21033, y: 70.69144, z: 0}
+  bottomRightTextBounds: {x: 388.21033, y: 40.044556, z: 0}
+  centerTextBounds: {x: 391.71033, y: 55.367996, z: 0}
+  finalTopLeftTextBounds: {x: 395.21033, y: 70.69144, z: 0}
+  finalTopRightTextBounds: {x: 395.21033, y: 40.044556, z: 0}
+  finalBottomLeftTextBounds: {x: 388.21033, y: 70.69144, z: 0}
+  finalBottomRightTextBounds: {x: 388.21033, y: 40.044556, z: 0}
+  finalCenterTextBounds: {x: 391.71033, y: 55.367996, z: 0}
   unwrappedBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:

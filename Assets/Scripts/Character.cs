@@ -9,6 +9,8 @@ public class Character : MonoBehaviour
         None, Hiking, Fracking, Cats, Dogs, Baking, Reading, TV, Coffee, Tea, Gardening
     };
     
+    public List<Texture> images;
+
     [Range(0.0f, 100.0f)]
     public float affection = 0;
     [Range(0.0f, 1.0f)]
