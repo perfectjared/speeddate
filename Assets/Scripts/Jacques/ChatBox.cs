@@ -19,14 +19,10 @@ public class ChatBox : MonoBehaviour
 
 	[SerializeField]
 	private List<GameObject> activeSpeechBubbles;
-	
-	public struct SpeechBubble
-    {
-		SuperTextMesh text;
-		RectTransform position;
-		RawImage img;		
-    }
 
+	[SerializeField]
+	private List<GameObject> activeResponseBubbles;
+	
     private void Start()
 	{
 		Debug.Log("GrammarFile text: " + GrammarFile.text);
@@ -36,7 +32,6 @@ public class ChatBox : MonoBehaviour
 
     private void Update()
     {
-
 		// Deletes speech bubble if they above the chat window
         for(int i = 0; i < activeSpeechBubbles.Count; i++)
         {
@@ -53,15 +48,12 @@ public class ChatBox : MonoBehaviour
     }
 
     // Instatiates a speech bubble prefab
-    public void SpawnChatBox()
+    public void SpawnSpeechBubble()
 	{
-		bubbleCount++;
 		var newBubble = Instantiate(speechBubble, chatWindow);
-
 		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
-		newBubble.GetComponent<RectTransform>().LeanAlpha(1, 0.5f);
+		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
 		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
-
 
 		message = newBubble.GetComponentInChildren<SuperTextMesh>();
 		fadeText = true;
@@ -78,16 +70,17 @@ public class ChatBox : MonoBehaviour
 		return newBubble;
 	}
 
+	// Moves the older chat messages upwards
 	public void MoveBubble(GameObject newBubble) 
     {
 		for (int i = 0; i < activeSpeechBubbles.IndexOf(newBubble); i++)
 		{
 			var activeBubbleTransform = activeSpeechBubbles[i].transform.localPosition;
 			activeSpeechBubbles[i].GetComponent<RectTransform>().LeanMove(new Vector3(activeBubbleTransform.x, activeBubbleTransform.y + 110, 0), 0.5f).setEaseSpring();
-			message.color = Color.Lerp(Color.clear, Color.black, 0.5f);
 		}
 	}
 
+	//Deletes all chat boxes and clears the activeSpeechBubble List
 	public void DeleteChatBoxes()
     {
 		for(int i = 0; i < activeSpeechBubbles.Count; i++)
@@ -101,4 +94,6 @@ public class ChatBox : MonoBehaviour
 			Destroy(bubble);
         }
     }
+
+
 }
