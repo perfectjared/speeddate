@@ -17,14 +17,13 @@ public class ToolTips : MonoBehaviour
         instance = this;
         rectTransformBG = transform.Find("BG").GetComponent<RectTransform>();
         tooltipText = transform.Find("tt").GetComponent<Text>();
-        //ShowToolTip("This is a tooltip");
     }
 
     private void Update()
     {
         Vector2 localPoint;
 
-        if(Input.mousePosition.x > 660)
+        if(Input.mousePosition.x > 1100)
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), new Vector2(Input.mousePosition.x - 600, Input.mousePosition.y + 50), uiCam, out localPoint);
         }
@@ -32,7 +31,6 @@ public class ToolTips : MonoBehaviour
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), new Vector2(Input.mousePosition.x + 50, Input.mousePosition.y), uiCam, out localPoint);
         }
-
 
         transform.localPosition = localPoint;
     }
@@ -49,8 +47,7 @@ public class ToolTips : MonoBehaviour
     public void HideToolTip()
     {
         gameObject.SetActive(false);
-    }
-    
+    }    
 
     public static void ShowTooltip_Static(string tooltipString)
     {
