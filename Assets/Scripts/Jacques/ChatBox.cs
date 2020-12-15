@@ -11,6 +11,7 @@ public class ChatBox : MonoBehaviour
 	public TraceryGrammar Grammar;
 	public RectTransform chatWindow;
 	public GameObject speechBubble;
+	public Message bubbleMessage;
 
 	public int bubbleCount = 0;
 	public bool fadeText;
@@ -28,6 +29,7 @@ public class ChatBox : MonoBehaviour
 		Debug.Log("GrammarFile text: " + GrammarFile.text);
 		Grammar = new TraceryGrammar(GrammarFile.text);
 		chatWindow = this.GetComponent<RectTransform>();
+		bubbleMessage = new Message();
 	}
 
     private void Update()
@@ -47,10 +49,25 @@ public class ChatBox : MonoBehaviour
         }
     }
 
-    // Instatiates a speech bubble prefab
+    public void ReceiveMessage(Message msg, bool character = true) {
+		bubbleMessage.messageType = msg.messageType;
+		bubbleMessage.feeling = msg.feeling;
+		bubbleMessage.topic = msg.topic;
+		bubbleMessage.sentence = msg.sentence;
+		SpawnSpeechBubble();
+	}
+	
+	// Instatiates a speech bubble prefab
     public void SpawnSpeechBubble()
 	{
 		var newBubble = Instantiate(speechBubble, chatWindow);
+<<<<<<< HEAD
+=======
+
+		var tempMessage = newBubble.AddComponent<Message>();
+		tempMessage = bubbleMessage;
+
+>>>>>>> jared
 		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
 		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
 		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
@@ -66,7 +83,8 @@ public class ChatBox : MonoBehaviour
 	{
 		activeSpeechBubbles.Add(newBubble); // Adds the instantiated bubble to the active bubbles list.
 		//newBubble.name = (bubbleCount - 1).ToString();
-		message.text = Grammar.Parse("#greetings# #descriptions#,  My name is <c=black><b>#name#</b></c>. #thinking# <c=red>#topics#</c>, #question#");
+		//message.text = Grammar.Parse("#output#");
+		message.text = bubbleMessage.sentence;
 		return newBubble;
 	}
 

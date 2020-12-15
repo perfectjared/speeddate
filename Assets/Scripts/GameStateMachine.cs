@@ -6,10 +6,11 @@ using NaughtyAttributes;
 
 [System.Serializable] public class _UnityEventInt:UnityEvent<int> {}
 [System.Serializable] public class _UnityEventFloat:UnityEvent<float> {}
-
 [System.Serializable] public class _UnityEventGameObject:UnityEvent<GameObject> {}
 [System.Serializable] public class _UnityEventMessage:UnityEvent<Message> {}
-public class GameStateMachine : MonoBehaviour
+[System.Serializable] public class _UnityEventString:UnityEvent<string>{}
+
+public class GameStateMachine : Singleton<GameStateMachine>
 {
     public List<StateInterface> states = new List<StateInterface>();
 
@@ -38,7 +39,6 @@ public class GameStateMachine : MonoBehaviour
         StartState(EndState());
     }
 
-    [Button]
     public void PostMessage(Message msg) {
         //logic of adding a new message comoposed of msg to the UI
     }
