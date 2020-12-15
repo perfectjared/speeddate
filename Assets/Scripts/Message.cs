@@ -32,7 +32,7 @@ public class Message : MonoBehaviour
         this.topic = (Character.Topic)Random.Range(0, 10);
         this.feeling = (int)Random.Range(-3, 4);
         this.sentence = "message: " + messageType.ToString() + ", topic: " + topic.ToString() + ", feeling: " + feeling;
-        Debug.Log(sentence);
+        //Debug.Log(sentence);
         //return new Message(messageType, topic, feeling);
     }
 
