@@ -59,13 +59,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 115ca5dd375ad1548b0dd88f639ad9f3, type: 3}
+  m_Texture: {fileID: 2800000, guid: a17ea9dd605aed84db08571207c7ba94, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   showAudioFoldout: 0
   showEventFoldout: 0
   info:
-  - pos: {x: -29.421875, y: 15.584198, z: 0}
+  - pos: {x: -30.646881, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: -20.234375, y: 15.584198, z: 0}
+  - pos: {x: -21.15313, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: -13.015625, y: 15.584198, z: 0}
+  - pos: {x: -13.628128, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: -5.359375, y: 15.584198, z: 0}
+  - pos: {x: -5.665634, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -273,7 +273,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: -0.109375, y: 15.584198, z: 0}
+  - pos: {x: -0.10938263, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: 7.328125, y: 15.584198, z: 0}
+  - pos: {x: 7.634369, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: 14.984375, y: 15.584198, z: 0}
+  - pos: {x: 15.59687, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-  - pos: {x: 20.234375, y: 15.584198, z: 0}
+  - pos: {x: 21.153122, y: 15.584198, z: 0}
     readTime: 0
     unreadTime: 0
     line: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
   style: 0
   baseOffset: {x: 0, y: 0, z: 0}
   lineSpacing: 1
-  characterSpacing: 0
+  characterSpacing: 0.1
   tabSize: 4
   autoWrap: 12
   uiWrap: 1
@@ -459,23 +459,23 @@ MonoBehaviour:
   textMesh: {fileID: 0}
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
-  rawBottomRightTextBounds: {x: 58.84375, y: -14, z: 0}
+  rawBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
   topLeftBounds: {x: 342.2431, y: 86.4294, z: 0}
   topRightBounds: {x: 342.2431, y: -13.69342, z: 0}
   bottomLeftBounds: {x: 312.6589, y: 86.4294, z: 0}
   bottomRightBounds: {x: 312.6589, y: -13.69342, z: 0}
   centerBounds: {x: 327.451, y: 36.36799, z: 0}
-  topLeftTextBounds: {x: 342.2431, y: 51.078934, z: 0}
-  topRightTextBounds: {x: 342.2431, y: 21.657059, z: 0}
-  bottomLeftTextBounds: {x: 335.2431, y: 51.078934, z: 0}
-  bottomRightTextBounds: {x: 335.2431, y: 21.657059, z: 0}
+  topLeftTextBounds: {x: 342.2431, y: 51.691437, z: 0}
+  topRightTextBounds: {x: 342.2431, y: 21.044556, z: 0}
+  bottomLeftTextBounds: {x: 335.2431, y: 51.691437, z: 0}
+  bottomRightTextBounds: {x: 335.2431, y: 21.044556, z: 0}
   centerTextBounds: {x: 338.7431, y: 36.367996, z: 0}
-  finalTopLeftTextBounds: {x: 342.2431, y: 51.078934, z: 0}
-  finalTopRightTextBounds: {x: 342.2431, y: 21.657059, z: 0}
-  finalBottomLeftTextBounds: {x: 335.2431, y: 51.078934, z: 0}
-  finalBottomRightTextBounds: {x: 335.2431, y: 21.657059, z: 0}
+  finalTopLeftTextBounds: {x: 342.2431, y: 51.691437, z: 0}
+  finalTopRightTextBounds: {x: 342.2431, y: 21.044556, z: 0}
+  finalBottomLeftTextBounds: {x: 335.2431, y: 51.691437, z: 0}
+  finalBottomRightTextBounds: {x: 335.2431, y: 21.044556, z: 0}
   finalCenterTextBounds: {x: 338.7431, y: 36.367996, z: 0}
-  unwrappedBottomRightTextBounds: {x: 58.84375, y: -14, z: 0}
+  unwrappedBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
       m_Calls: []
