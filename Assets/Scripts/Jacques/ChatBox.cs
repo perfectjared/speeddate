@@ -50,9 +50,7 @@ public class ChatBox : MonoBehaviour
     // Instatiates a speech bubble prefab
     public void SpawnSpeechBubble()
 	{
-		bubbleCount++;
 		var newBubble = Instantiate(speechBubble, chatWindow);
-
 		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
 		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
 		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
@@ -79,7 +77,6 @@ public class ChatBox : MonoBehaviour
 		{
 			var activeBubbleTransform = activeSpeechBubbles[i].transform.localPosition;
 			activeSpeechBubbles[i].GetComponent<RectTransform>().LeanMove(new Vector3(activeBubbleTransform.x, activeBubbleTransform.y + 110, 0), 0.5f).setEaseSpring();
-			//message.color = Color.Lerp(Color.clear, Color.black, 0.5f);
 		}
 	}
 
