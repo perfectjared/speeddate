@@ -1,8 +1,4 @@
-﻿/* TODO:
-- Split this out BIGTIME
-*/
-
-//https://answers.unity.com/questions/820599/simulate-button-presses-through-code-unity-46-gui.html
+﻿//https://answers.unity.com/questions/820599/simulate-button-presses-through-code-unity-46-gui.html
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -7,7 +7,7 @@ using UnityTracery;
 public class Responses : MonoBehaviour
 {
     public RectTransform response_top, response_middle, response_bottom;
-    public Texture[] bubbleColors; //TODO: compliment bubble, talk to Jake.
+    public Texture[] bubbleColors;
     public Vector3 topPos, middlePos, bottomPos;
 
     private Vector3 startPos = new Vector3(0,-250,0);
@@ -48,8 +48,8 @@ public class Responses : MonoBehaviour
         response_bottom.LeanMoveLocal(bottomPos, 0.5f).setEaseSpring();
 
         // Randomly assigns a texture
-        topImage.texture = bubbleColors[Random.Range(0, 3)];
-        middleImage.texture = bubbleColors[Random.Range(0, 3)];
-        bottomImage.texture = bubbleColors[Random.Range(0, 3)];
+        topImage.texture = bubbleColors[Random.Range(0, 4)];
+        middleImage.texture = bubbleColors[Random.Range(0, 4)];
+        bottomImage.texture = bubbleColors[Random.Range(0, 4)];
     }
 }
