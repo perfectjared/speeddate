@@ -4,8 +4,8 @@
   "greetings": [ "Hey-o", "Hi", "Howdy", "Hey" ],
   "descriptions": [ "partner", "pard", "pal", "cowboy" ],
   "topics": [ "coffee", "fracking", "reading"],
-  "thinking": ["I've been learning about", "Been thinking about"
-  , "I've been hearing things about"],
+  "thinking": ["I read up on", "Been thinking bout"
+  , "I've been hearing things about", "I watched a movie about"],
   "often": ["A little", "sometimes", "a lot"],
-  "question": ["right?", "you know?", "you get me?"]
+  "question": ["right?", "you know?", "you get me?", "yeah?"]
 }
