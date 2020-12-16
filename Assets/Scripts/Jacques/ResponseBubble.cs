@@ -31,10 +31,12 @@ public class ResponseBubble : MonoBehaviour
 
     public void Click()
     {
-        Responses.Instance.BubbleClicked(this.gameObject);
-        GameplayManager.Instance.ReceiveMessage(message);
-        DeckManager.Instance.AddToDiscard(message);
-        Destroy(this.gameObject);
+        if (Crosshair.Instance.ammo > 0) {
+            Responses.Instance.BubbleClicked(this.gameObject);
+            GameplayManager.Instance.ReceiveMessage(message);
+            DeckManager.Instance.AddToDiscard(message);
+            Destroy(this.gameObject);
+        }
     }
     public void OnHover()
     {

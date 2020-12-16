@@ -16,36 +16,41 @@ public class Responses : Singleton<Responses>
     // Hides the responses and resets thier rotation
     public void InitialiseResponses()
     {
-        GameObject newTop;
-        GameObject newMiddle;
-        GameObject newBottom;
+        if (Crosshair.Instance.ammo > 0) {
+            GameObject newTop;
+            GameObject newMiddle;
+            GameObject newBottom;
 
-        if (GameObject.Find("Top"))
-        {
-            Destroy(GameObject.Find("Top"));
+            if (GameObject.Find("Top"))
+            {
+                Destroy(GameObject.Find("Top"));
+                DeckManager.Instance.DiscardMessage(GameObject.Find("Top").GetComponent<ResponseBubble>().message);
+            }
+
+            if (GameObject.Find("Middle"))
+            {
+                Destroy(GameObject.Find("Middle"));
+                DeckManager.Instance.DiscardMessage(GameObject.Find("Middle").GetComponent<ResponseBubble>().message);
+            }
+
+            if (GameObject.Find("Bottom"))
+            {
+                Destroy(GameObject.Find("Bottom"));
+                DeckManager.Instance.DiscardMessage(GameObject.Find("Bottom").GetComponent<ResponseBubble>().message);
+            }
+
+            newTop = Instantiate(top, spawnPos.position, Quaternion.identity, this.transform);
+            newTop.name = "Top";
+            DisplayResponse(newTop);
+
+            newMiddle = Instantiate(middle, spawnPos.position, Quaternion.identity, this.transform);
+            newMiddle.name = "Middle";
+            DisplayResponse(newMiddle);
+
+            newBottom = Instantiate(bottom, spawnPos.position, Quaternion.identity, this.transform);
+            newBottom.name = "Bottom";
+            DisplayResponse(newBottom);
         }
-
-        if (GameObject.Find("Middle"))
-        {
-            Destroy(GameObject.Find("Middle"));
-        }
-
-        if (GameObject.Find("Bottom"))
-        {
-            Destroy(GameObject.Find("Bottom"));
-        }
-
-        newTop = Instantiate(top, spawnPos.position, Quaternion.identity, this.transform);
-        newTop.name = "Top";
-        DisplayResponse(newTop);
-
-        newMiddle = Instantiate(middle, spawnPos.position, Quaternion.identity, this.transform);
-        newMiddle.name = "Middle";
-        DisplayResponse(newMiddle);
-
-        newBottom = Instantiate(bottom, spawnPos.position, Quaternion.identity, this.transform);
-        newBottom.name = "Bottom";
-        DisplayResponse(newBottom);
     }
 
     public void BubbleClicked(GameObject clickedBubble) 

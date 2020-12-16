@@ -39,6 +39,7 @@ public class GameplayManager : Singleton<GameplayManager>
 
     public void StartPlay() {
         NextCharacter();
+        Responses.Instance.InitialiseResponses();
     }
 
     public void EndPlay() {
