@@ -78,7 +78,7 @@ public class GameplayManager : Singleton<GameplayManager>
 
     [Button]
     public void RespondRandomly() {
-        character.ReceiveMessage(new Message());
+        ReceiveMessage(new Message());
         flow = (0.5f > flow + flowAdd) ? flow + flowAdd : 0.5f;
     }
 
@@ -91,7 +91,7 @@ public class GameplayManager : Singleton<GameplayManager>
     }
 
     public void ShootMessage(Message message) {
-        Debug.Log(message.sentence);
+        deckManager.AddToDeck(message);
     }
 
     public void AffectionChange(float value) {
@@ -116,5 +116,10 @@ public class GameplayManager : Singleton<GameplayManager>
     private void ChangeTopic(Character.Topic topic) {
         this.topic = topic;
         topicChange.Invoke(topic.ToString());
+    }
+
+    public void ChangeFlow(bool drop = false) {
+        if (drop) flow = 0.1f;
+        else flow = (0.5f > flow + flowAdd) ? flow + flowAdd : 0.5f;
     }
 }

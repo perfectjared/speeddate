@@ -43,17 +43,25 @@ public class DeckManager : MonoBehaviour
     Deck.RemoveAt(0);
   }
 
+  public void AddToDiscard(Message message) {
+    Discard.Add(message);
+    Debug.Log(message.sentence + " added to discard");
+  }
 
+  public void AddToDeck(Message message) {
+    Deck.Add(message);
+    Debug.Log(message.sentence + " added to deck");
+  }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+  // Start is called before the first frame update
+  void Start()
+  {
 
-    }
+  }
 
-    // Update is called once per frame
-    void Update()
-    {
+  // Update is called once per frame
+  void Update()
+  {
 
-    }
+  }
 }

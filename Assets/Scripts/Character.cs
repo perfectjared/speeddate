@@ -62,6 +62,9 @@ public class Character : MonoBehaviour
     }
 
     public void AddAffection(float val) {
+        if (val > 0) GameplayManager.Instance.ChangeFlow();
+        else GameplayManager.Instance.ChangeFlow(true);
+        
         affection += val * flow;
         if (affection < 0) affection = 0;
         GameplayManager.Instance.AffectionChange(affection);
