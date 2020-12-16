@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using UnityTracery;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Character : MonoBehaviour
     };
     
     public List<Texture> images;
+    private RawImage image;
 
     [Range(0.0f, 100.0f)]
     public float affection = 0;
@@ -28,6 +30,7 @@ public class Character : MonoBehaviour
 
     private void Start() {
         Grammar = new TraceryGrammar(GrammarFile.text);
+        image = GetComponent<RawImage>();
     }
     
     void Update() {
@@ -58,13 +61,16 @@ public class Character : MonoBehaviour
             ChangeTopic();
         } else if (msg.messageType == Message.MessageType.SmallTalk) {
             AddAffection(5f);
+            React(0);
         } else if (msg.messageType == Message.MessageType.Feeling) {
             difference = (int)Mathf.Abs(sentiments[(int)msg.topic] - msg.feeling);
             AddAffection(3 - difference);
+            React(difference);
         } else if (msg.messageType == Message.MessageType.FeelingTopic) {
             ChangeTopic();
             difference = (int)Mathf.Abs(sentiments[(int)msg.topic] - msg.feeling);
             AddAffection((3 - difference) * 2f);
+            React(difference);
         }
     }
 
@@ -75,6 +81,46 @@ public class Character : MonoBehaviour
         affection += val;
         if (affection < 0) affection = 0;
         GameplayManager.Instance.AffectionChange(affection);
+    }
+
+    private void React(int value) {
+        int listAt = 0;
+        switch (value) {
+            case 0:
+            case 1:
+            case 2:
+            listAt = 1;
+            break;
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            listAt = 2;
+            break;
+        }
+        if (listAt != 0) {
+            image.texture = images[listAt];
+        }
+        StartCoroutine(ReturnFace());
+    }
+
+    private IEnumerator ReturnFace() {
+        var waitTime = 2f;
+        var img = image.texture;
+        bool interrupted = false;
+        while (waitTime > 0) {
+            waitTime -= Time.deltaTime;
+            if (image.texture != img) {
+                break;
+                interrupted = true;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        if (!interrupted) {
+            Debug.Log("test");
+            image.texture = images[0];
+        }
+        yield return new WaitForEndOfFrame();
     }
 
     [Button]
