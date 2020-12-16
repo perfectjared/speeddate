@@ -37,6 +37,18 @@ public class Timer : MonoBehaviour
         
         running = false;
     }
+
+    public void Stop() {
+        time = 0f;
+    }
+
+    public void Reset() {
+        time = length;
+    }
+
+    public bool Running() {
+        return running;
+    }
     
     public int TimeAt() {
         return timeInt;

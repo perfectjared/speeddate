@@ -82,10 +82,10 @@ public class Crosshair_Follow : MonoBehaviour
     void Shoot()
     {
         shooting = true;
-        Debug.Log("Shoot");
+        //Debug.Log("Shoot");
         if (onScreen() && ammo > 0)
-        {            GameObject shotObject;
-            
+        {  
+            GameObject shotObject;
             if (joyconControl) {
                 shotObject = JoyconCrosshair.pointingObject;
                 Debug.Log("shot " + shotObject + ", " + ammo + "/6");
@@ -129,7 +129,7 @@ public class Crosshair_Follow : MonoBehaviour
         if(ammo >= 1)
         {
             ammo--;
-            ammoUi.DecrementAmmo();
+            //ammoUi.DecrementAmmo();
             if (ammo == 0) NoAmmo();
             onAmmo.Invoke(ammo);
         }        
@@ -137,13 +137,13 @@ public class Crosshair_Follow : MonoBehaviour
 
     void NoAmmo()
     {
-        ammoUi.NoAmmo();
+        //ammoUi.NoAmmo();
     }
 
     void RefillAmmo()
     {
         ammo = 6;
-        ammoUi.RefillAmmo();
+        //ammoUi.RefillAmmo();
         reloadSource.Play();
         onAmmo.Invoke(ammo);
     }

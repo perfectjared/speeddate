@@ -27,6 +27,6 @@ public class PlayState : MonoBehaviour, StateInterface
     }
     public void EndState()
     {
-
+        GameplayManager.Instance.EndPlay();
     }
 }
