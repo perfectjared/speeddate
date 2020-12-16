@@ -151,7 +151,7 @@ public class Character : MonoBehaviour
             feeling = "love";
             break;
         }
-        sentence = sentence.Replace("&", "<c=green>" + feeling.ToUpper() + "</c>");
+        sentence = sentence.Replace("&", "<c=#23911d>" + feeling.ToUpper() + "</c>");
 
         msg.sentence = sentence;
         return msg;

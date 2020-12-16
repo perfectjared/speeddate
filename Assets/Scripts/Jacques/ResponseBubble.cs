@@ -9,7 +9,7 @@ public class ResponseBubble : MonoBehaviour
     [SerializeField]
     private Texture[] bubbleColors;
 
-    private Text newMessage;
+    private SuperTextMesh newMessage;
     private RectTransform rectTransform;
     private RawImage rawImage;
     private Vector3 scaleTo = new Vector3(1.1f, 1.1f, 0);
@@ -24,7 +24,7 @@ public class ResponseBubble : MonoBehaviour
     private void Start()
     {
         rawImage = GetComponent<RawImage>();
-        newMessage = GetComponentInChildren<Text>();
+        newMessage = GetComponentInChildren<SuperTextMesh>();
         responses = FindObjectOfType<Responses>();
         message = DeckManager.Instance.drawOne();
         newMessage.text = message.sentence;
