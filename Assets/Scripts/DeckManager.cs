@@ -92,6 +92,7 @@ public class DeckManager : Singleton<DeckManager>
     AddToDiscard(message4);
     AddToDiscard(message5);
     AddToDiscard(message6);
+    shuffle();
   }
 
   // Update is called once per frame

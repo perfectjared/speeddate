@@ -7,7 +7,6 @@ using UnityTracery;
 
 public class Responses : Singleton<Responses>
 {
-    public Texture[] bubbleColors;
     public GameObject top, middle, bottom;
     public Vector3 topPos, middlePos, bottomPos;
     public RectTransform spawnPos;
