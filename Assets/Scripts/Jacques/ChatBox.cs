@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityTracery;
 
 public class ChatBox : MonoBehaviour
 {
-	public TextAsset GrammarFile;
 	public SuperTextMesh message;
-	public TraceryGrammar Grammar;
 	public RectTransform chatWindow;
 	public GameObject speechBubble;
+	public GameObject playerSpeechBubble;
 	public Message bubbleMessage;
 
 	public int bubbleCount = 0;
@@ -26,8 +24,6 @@ public class ChatBox : MonoBehaviour
 	
     private void Start()
 	{
-		Debug.Log("GrammarFile text: " + GrammarFile.text);
-		Grammar = new TraceryGrammar(GrammarFile.text);
 		chatWindow = this.GetComponent<RectTransform>();
 		bubbleMessage = new Message();
 	}
