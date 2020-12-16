@@ -47,8 +47,8 @@ public class GameplayManager : Singleton<GameplayManager>
     }
 
     void Update() {
-        if (character) AffectionChange(character.affection);
-        if (flow > 0.1f) flow -= Time.deltaTime * 0.025f;
+        //if (character) AffectionChange(character.affection);
+        if (flow > 0.1f) flow -= Time.deltaTime * 0.0125f;
         if (flow < 0.1f) flow = 0.1f;
         FlowChange(flow);
     }

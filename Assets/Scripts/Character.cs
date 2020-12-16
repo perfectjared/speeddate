@@ -57,7 +57,7 @@ public class Character : MonoBehaviour
         if (msg.messageType == Message.MessageType.Topic) {
             ChangeTopic();
         } else if (msg.messageType == Message.MessageType.SmallTalk) {
-            AddAffection(affection * 1.2f);
+            AddAffection(5f);
         } else if (msg.messageType == Message.MessageType.Feeling) {
             difference = (int)Mathf.Abs(sentiments[(int)msg.topic] - msg.feeling);
             AddAffection(3 - difference);
