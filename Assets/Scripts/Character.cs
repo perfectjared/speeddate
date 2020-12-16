@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using UnityTracery;
 
 public class Character : MonoBehaviour
 {
@@ -22,7 +23,13 @@ public class Character : MonoBehaviour
     public float speechRate = 0.5f;
     private int speechSinceSubjectChange = 0;
     private Character.Topic topic;
+    public TextAsset GrammarFile;
+    public TraceryGrammar Grammar;
 
+    private void Start() {
+        Grammar = new TraceryGrammar(GrammarFile.text);
+    }
+    
     void Update() {
         if (active) {
             flow = GameplayManager.Instance.flow;
