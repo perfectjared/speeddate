@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 6973756449859818411}
   - component: {fileID: 6973756449859818453}
   - component: {fileID: 6973756449859818452}
+  - component: {fileID: 5324750251811443373}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -199,10 +200,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showAppearanceFoldout: 1
   showMaterialFoldout: 0
-  showPositionFoldout: 1
+  showPositionFoldout: 0
   showTimingFoldout: 1
   showFunctionalityFoldout: 0
-  showAudioFoldout: 0
+  showAudioFoldout: 1
   showEventFoldout: 0
   info:
   - pos: {x: -30.646881, y: 15.584198, z: 0}
@@ -493,8 +494,11 @@ MonoBehaviour:
   unreadDelay: 0.05
   undrawOrder: 1
   undrawAnimName: Appear
-  audioSource: {fileID: 0}
-  audioClips: []
+  audioSource: {fileID: 5324750251811443373}
+  audioClips:
+  - {fileID: 8300000, guid: 32a99aeee665c9c459242e62e288dba3, type: 3}
+  - {fileID: 8300000, guid: 766ac1c993ce1964197df9105a46f658, type: 3}
+  - {fileID: 8300000, guid: 98ed203aabf2d2a40901b899630c2ad6, type: 3}
   stopPreviousSound: 1
   pitchMode: 0
   overridePitch: 1
@@ -528,21 +532,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
   rawBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
-  topLeftBounds: {x: 395.21033, y: 105.4294, z: 0}
-  topRightBounds: {x: 395.2103, y: 5.3065796, z: 0}
-  bottomLeftBounds: {x: 365.6261, y: 105.4294, z: 0}
-  bottomRightBounds: {x: 365.6261, y: 5.30661, z: 0}
-  centerBounds: {x: 380.4182, y: 55.368004, z: 0}
-  topLeftTextBounds: {x: 395.21033, y: 70.69144, z: 0}
-  topRightTextBounds: {x: 395.21033, y: 40.044556, z: 0}
-  bottomLeftTextBounds: {x: 388.21033, y: 70.69144, z: 0}
-  bottomRightTextBounds: {x: 388.21033, y: 40.044556, z: 0}
-  centerTextBounds: {x: 391.71033, y: 55.367996, z: 0}
-  finalTopLeftTextBounds: {x: 395.21033, y: 70.69144, z: 0}
-  finalTopRightTextBounds: {x: 395.21033, y: 40.044556, z: 0}
-  finalBottomLeftTextBounds: {x: 388.21033, y: 70.69144, z: 0}
-  finalBottomRightTextBounds: {x: 388.21033, y: 40.044556, z: 0}
-  finalCenterTextBounds: {x: 391.71033, y: 55.367996, z: 0}
+  topLeftBounds: {x: 300.21033, y: 51.929398, z: 0}
+  topRightBounds: {x: 300.2103, y: -48.19342, z: 0}
+  bottomLeftBounds: {x: 270.6261, y: 51.929398, z: 0}
+  bottomRightBounds: {x: 270.6261, y: -48.19339, z: 0}
+  centerBounds: {x: 285.4182, y: 1.8680038, z: 0}
+  topLeftTextBounds: {x: 300.21033, y: 17.191437, z: 0}
+  topRightTextBounds: {x: 300.21033, y: -13.455444, z: 0}
+  bottomLeftTextBounds: {x: 293.21033, y: 17.191437, z: 0}
+  bottomRightTextBounds: {x: 293.21033, y: -13.455444, z: 0}
+  centerTextBounds: {x: 296.71033, y: 1.8679962, z: 0}
+  finalTopLeftTextBounds: {x: 300.21033, y: 17.191437, z: 0}
+  finalTopRightTextBounds: {x: 300.21033, y: -13.455444, z: 0}
+  finalBottomLeftTextBounds: {x: 293.21033, y: 17.191437, z: 0}
+  finalBottomRightTextBounds: {x: 293.21033, y: -13.455444, z: 0}
+  finalCenterTextBounds: {x: 296.71033, y: 1.8679962, z: 0}
   unwrappedBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
@@ -577,3 +581,99 @@ MonoBehaviour:
   latestNumber: 7
   currentUnReadTime: 0
   preParsedText: '#output#'
+--- !u!82 &5324750251811443373
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6973756449859818410}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
