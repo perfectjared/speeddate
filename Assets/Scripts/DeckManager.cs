@@ -13,13 +13,15 @@ public class DeckManager : Singleton<DeckManager>
   public int discardHold;
   public int shuffleMax;
 
+  public int cardsInDeck;
+
 
   //this is a public function to shuffle the deck. It is called when the deck is empty
   public void shuffle(){
-    discardHold = Discard.Count;
-    for(int i = 0; i < discardHold; i++){
+    while (Discard.Count > 0) {
       shuffleMax = Random.Range(0, Discard.Count);
       Deck.Add(Discard[shuffleMax]);
+      Discard.RemoveAt(shuffleMax);
     }
   }
 
@@ -30,13 +32,13 @@ public class DeckManager : Singleton<DeckManager>
       if(Deck.Count < 1){
         shuffle();
       }
-      Hand.Add(Deck[0]);
-      Deck.RemoveAt(0);
+      Hand.Add(Deck[i]);
+      Deck.RemoveAt(i);
     }
   }
 
   public Message drawOne(){
-    if(Deck.Count < 1){
+    if (Deck.Count < 1) {
       shuffle();
     }
     Hand.Add(Deck[0]);
@@ -45,14 +47,24 @@ public class DeckManager : Singleton<DeckManager>
     return temp;
   }
 
-  public void AddToDiscard(Message message) {
-    Discard.Add(message);
-    Debug.Log(message.sentence + " added to discard");
+  public void DiscardHand() {
+    foreach (Message msg in Hand) {
+      Discard.Add(msg);
+      Hand.Remove(msg);
+    }
   }
 
-  public void AddToDeck(Message message) {
-    Deck.Add(message);
-    Debug.Log(message.sentence + " added to deck");
+  public void DiscardMessage(Message msg) {
+    Hand.Remove(msg);
+    Discard.Add(msg);
+  }
+
+  public void AddToDiscard(Message msg) {
+    Discard.Add(msg);
+  }
+
+  public void AddToDeck(Message msg) {
+    Deck.Add(msg);
   }
 
   // Start is called before the first frame update
@@ -73,7 +85,7 @@ public class DeckManager : Singleton<DeckManager>
     Message message4 = new Message();
     message4.messageType = Message.MessageType.Topic;
     message4.topic = Character.Topic.Cats;
-    message4.sentence = "How's about uh... You like Cats?";
+    message4.sentence = "You like, uh, Cats?";
 
     Message message5 = new Message();
     message5.messageType = Message.MessageType.Feeling;
@@ -84,20 +96,20 @@ public class DeckManager : Singleton<DeckManager>
     message6.messageType = Message.MessageType.FeelingTopic;
     message6.feeling = 3;
     message6.topic = Character.Topic.Coffee;
-    message6.sentence = "I sure do love coffee,... What do you think?";
+    message6.sentence = "I do love me some coffee... What do you think?";
 
-    AddToDiscard(message1);
-    AddToDiscard(message2);
-    AddToDiscard(message3);
-    AddToDiscard(message4);
-    AddToDiscard(message5);
-    AddToDiscard(message6);
+    Discard.Add(message1);
+    Discard.Add(message2);
+    Discard.Add(message3);
+    Discard.Add(message4);
+    Discard.Add(message5);
+    Discard.Add(message6);
     shuffle();
   }
 
   // Update is called once per frame
   void Update()
   {
-
+    cardsInDeck = Deck.Count;
   }
 }
