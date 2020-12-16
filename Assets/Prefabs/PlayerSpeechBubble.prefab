@@ -531,21 +531,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
   rawBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
-  topLeftBounds: {x: 422.70792, y: -101.220825, z: 0}
-  topRightBounds: {x: 422.7079, y: -1.0980072, z: 0}
-  bottomLeftBounds: {x: 452.2921, y: -101.220795, z: 0}
-  bottomRightBounds: {x: 452.2921, y: -1.0980072, z: 0}
-  centerBounds: {x: 437.5, y: -51.159416, z: 0}
-  topLeftTextBounds: {x: 422.7079, y: -66.48285, z: 0}
-  topRightTextBounds: {x: 422.7079, y: -35.835968, z: 0}
-  bottomLeftTextBounds: {x: 429.7079, y: -66.48285, z: 0}
-  bottomRightTextBounds: {x: 429.7079, y: -35.835968, z: 0}
-  centerTextBounds: {x: 426.2079, y: -51.15941, z: 0}
-  finalTopLeftTextBounds: {x: 422.7079, y: -66.48285, z: 0}
-  finalTopRightTextBounds: {x: 422.7079, y: -35.835968, z: 0}
-  finalBottomLeftTextBounds: {x: 429.7079, y: -66.48285, z: 0}
-  finalBottomRightTextBounds: {x: 429.7079, y: -35.835968, z: 0}
-  finalCenterTextBounds: {x: 426.2079, y: -51.15941, z: 0}
+  topLeftBounds: {x: 533.7079, y: -38.720825, z: 0}
+  topRightBounds: {x: 533.7079, y: 61.401993, z: 0}
+  bottomLeftBounds: {x: 563.2921, y: -38.720795, z: 0}
+  bottomRightBounds: {x: 563.2921, y: 61.401993, z: 0}
+  centerBounds: {x: 548.5, y: 11.340584, z: 0}
+  topLeftTextBounds: {x: 533.7079, y: -3.9828491, z: 0}
+  topRightTextBounds: {x: 533.7079, y: 26.664032, z: 0}
+  bottomLeftTextBounds: {x: 540.7079, y: -3.9828491, z: 0}
+  bottomRightTextBounds: {x: 540.7079, y: 26.664032, z: 0}
+  centerTextBounds: {x: 537.2079, y: 11.340591, z: 0}
+  finalTopLeftTextBounds: {x: 533.7079, y: -3.9828491, z: 0}
+  finalTopRightTextBounds: {x: 533.7079, y: 26.664032, z: 0}
+  finalBottomLeftTextBounds: {x: 540.7079, y: -3.9828491, z: 0}
+  finalBottomRightTextBounds: {x: 540.7079, y: 26.664032, z: 0}
+  finalCenterTextBounds: {x: 537.2079, y: 11.340591, z: 0}
   unwrappedBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:

@@ -14,5 +14,10 @@ public class SpeechBubble : MonoBehaviour
                 GetComponent<Button>().interactable = false;
             }
         }
+
+        this.gameObject.GetComponent<RectTransform>().LeanScale(new Vector3(0.2f, 0.2f, 0), 1f);
+        this.gameObject.GetComponent<RectTransform>().LeanAlpha(0, 1f);
+        this.gameObject.GetComponent<RectTransform>().LeanMoveLocal(new Vector3(350, -195), 1f);
+        this.GetComponentInChildren<SuperTextMesh>().enabled = false;
     }
 }
