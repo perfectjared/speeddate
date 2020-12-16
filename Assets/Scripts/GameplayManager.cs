@@ -55,7 +55,10 @@ public class GameplayManager : Singleton<GameplayManager>
 
     [Button]
     private void NextCharacter() {
-        if (character) character.Denitialize();
+        if (character) {
+            character.Denitialize();
+            //animate character off the screen
+        }
         flow = 0.1f;
         characterAt++;
         
@@ -69,6 +72,7 @@ public class GameplayManager : Singleton<GameplayManager>
         } else {
             character = characters[characterAt - 1].GetComponent<Character>();
             character.Initialize();
+            //animate character on to screen
             timer.Reset();
             timer.StartTimer();
             ChangeTopic(Character.Topic.None);

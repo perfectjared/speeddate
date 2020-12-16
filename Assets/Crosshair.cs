@@ -50,7 +50,7 @@ public class Crosshair : Singleton<Crosshair>
         onscreen = false;
     }
 
-    void Reload() {
+    public void Reload() {
         ammo = 6;
         ammoChange.Invoke(ammo);
         audioManager.Play("Empty");

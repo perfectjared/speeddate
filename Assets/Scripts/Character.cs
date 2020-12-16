@@ -72,7 +72,7 @@ public class Character : MonoBehaviour
         if (val > 0) GameplayManager.Instance.ChangeFlow();
         else GameplayManager.Instance.ChangeFlow(true);
         
-        affection += val * flow;
+        affection += val;
         if (affection < 0) affection = 0;
         GameplayManager.Instance.AffectionChange(affection);
     }
