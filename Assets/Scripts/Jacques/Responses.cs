@@ -18,7 +18,7 @@ public class Responses : Singleton<Responses>
     {
         GameObject newTop;
         GameObject newMiddle;
-        GameObject newBottom;       
+        GameObject newBottom;
 
         if (GameObject.Find("Top"))
         {
