@@ -54,11 +54,11 @@ public class ChatBox : MonoBehaviour
 		bubbleMessage.feeling = msg.feeling;
 		bubbleMessage.topic = msg.topic;
 		bubbleMessage.sentence = msg.sentence;
-		SpawnSpeechBubble();
+		SpawnSpeechBubble(true);
 	}
 	
 	// Instatiates a speech bubble prefab
-    public void SpawnSpeechBubble()
+    public void SpawnSpeechBubble(bool received = false)
 	{
 		var newBubble = Instantiate(speechBubble, chatWindow);
 		var tempMessage = newBubble.AddComponent<Message>();
