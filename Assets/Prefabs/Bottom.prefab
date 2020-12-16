@@ -87,6 +87,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd00b56d66c5bb4e82ef02dd2e53eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  message: {fileID: 0}
+  bubbleColors:
+  - {fileID: 2800000, guid: 6ba69cc32d9ccb5478d2224c7109eb28, type: 3}
+  - {fileID: 2800000, guid: 990c6bb551ac0f747b41e53a05816e1e, type: 3}
+  - {fileID: 2800000, guid: cdb402dd51166cf4196fd60c7da506b6, type: 3}
+  - {fileID: 2800000, guid: b0e2d911b2c33854ea995befad3cd691, type: 3}
 --- !u!114 &3542502868507814758
 MonoBehaviour:
   m_ObjectHideFlags: 0

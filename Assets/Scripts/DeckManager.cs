@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeckManager : MonoBehaviour
+public class DeckManager : Singleton<DeckManager>
 {
   //declaring the three lists that repressent the deck, hand, and Discard
   public List<Message> Deck = new List<Message>();
@@ -35,12 +35,14 @@ public class DeckManager : MonoBehaviour
     }
   }
 
-  public void drawOne(){
+  public Message drawOne(){
     if(Deck.Count < 1){
       shuffle();
     }
     Hand.Add(Deck[0]);
+    var temp = Deck[0];
     Deck.RemoveAt(0);
+    return temp;
   }
 
   public void AddToDiscard(Message message) {
@@ -90,6 +92,7 @@ public class DeckManager : MonoBehaviour
     AddToDiscard(message4);
     AddToDiscard(message5);
     AddToDiscard(message6);
+    shuffle();
   }
 
   // Update is called once per frame
