@@ -55,10 +55,10 @@ public class GameplayManager : Singleton<GameplayManager>
     [Button]
     private void NextCharacter() {
         if (character) 
-        { 
-            character.Denitialize();
-            character.gameObject.GetComponent<RectTransform>().LeanMoveLocalX(850, 3).setEaseInOutSine().setOnComplete(ResetPlayerPos);
-        }
+        {
+            character.gameObject.GetComponent<RectTransform>().LeanMoveLocalX(850, 3).setEaseInOutSine();
+            character.Denitialize();            
+        }   
         flow = 0.1f;
         characterAt++;
         
@@ -103,7 +103,7 @@ public class GameplayManager : Singleton<GameplayManager>
 
     public void ResetPlayerPos()
     {
-        character.gameObject.GetComponent<RectTransform>().position = new Vector3(-400, -30, 0); 
+       
     }
 
     private IEnumerator WaitForTimer() {
