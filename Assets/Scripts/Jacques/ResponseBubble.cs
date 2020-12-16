@@ -35,14 +35,10 @@ public class ResponseBubble : MonoBehaviour
     {
         if (Crosshair.Instance.ammo > 0) {
             Responses.Instance.BubbleClicked(this.gameObject);
-            //GameplayManager.Instance.ReceiveMessage(message);
-            //DeckManager.Instance.AddToDiscard(message);
+            GameplayManager.Instance.ReceiveMessage(message); // BE IN THE PLAY STATE 4HEAD
+            DeckManager.Instance.AddToDiscard(message);
+            responses.Replace(this.gameObject);
             Destroy(this.gameObject);
-
-            if (!GameObject.Find("Middle"))
-            {
-
-            }
         }
     }
     public void OnHover()
