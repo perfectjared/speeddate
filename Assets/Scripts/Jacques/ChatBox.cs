@@ -11,6 +11,15 @@ public class ChatBox : MonoBehaviour
 	public GameObject playerSpeechBubble;
 	public Message bubbleMessage;
 
+	[SerializeField]
+	private AudioClip[] FrenchTalk;
+	[SerializeField]
+	private AudioClip[] AuberyTalk;
+	[SerializeField]
+	private AudioClip[] AmberTalk;
+
+	private GameplayManager gm;
+
 	public int bubbleCount = 0;
 	public bool fadeText;
 
@@ -26,6 +35,7 @@ public class ChatBox : MonoBehaviour
 	{
 		chatWindow = this.GetComponent<RectTransform>();
 		bubbleMessage = new Message();
+		gm = FindObjectOfType<GameplayManager>();
 	}
 
     private void Update()
@@ -39,8 +49,7 @@ public class ChatBox : MonoBehaviour
 				var speechBubbleText = activeSpeechBubbles[i].GetComponentInChildren<SuperTextMesh>();
 				speechBubbleText.enabled = false;
 				Destroy(activeSpeechBubbles[i]);
-				activeSpeechBubbles.RemoveAt(i);
-				
+				activeSpeechBubbles.RemoveAt(i);				
 			}
         }
     }
@@ -50,6 +59,8 @@ public class ChatBox : MonoBehaviour
 		bubbleMessage.feeling = msg.feeling;
 		bubbleMessage.topic = msg.topic;
 		bubbleMessage.sentence = msg.sentence;
+
+		
 		SpawnSpeechBubble(character);
 	}
 	
@@ -57,14 +68,37 @@ public class ChatBox : MonoBehaviour
     public void SpawnSpeechBubble(bool character)
 	{
 		GameObject newBubble;
+
 		if (!character) {
 			newBubble = Instantiate(playerSpeechBubble, chatWindow);
 			newBubble.LeanScale(new Vector3(-1, 1, 0), 0.3f);
 		} else {
 			newBubble = Instantiate(speechBubble, chatWindow);
-			newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
+			newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f); 			
 		}
 
+		// Sets the speech sounds to be Jean's
+		if(gm.characterAt == 1)
+        {
+			Debug.Log("Jean-Pierre Sounds");
+			newBubble.GetComponentInChildren<SuperTextMesh>().audioClips = FrenchTalk;
+		}
+
+		// Sets the speech sounds to be Auberey's
+		if (gm.characterAt == 2)
+		{
+			Debug.Log("Auberey Sounds");
+			newBubble.GetComponentInChildren<SuperTextMesh>().audioClips = AuberyTalk;
+		}
+
+		// Sets the speech sounds to be Aumber's
+		if (gm.characterAt == 3)
+		{
+			Debug.Log("Amber Sounds");
+			newBubble.GetComponentInChildren<SuperTextMesh>().audioClips = AmberTalk;
+		}
+
+		// Animates the new speech bubble on screen
 		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
 		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
 
