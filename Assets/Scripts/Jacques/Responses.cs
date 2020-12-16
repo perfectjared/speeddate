@@ -53,6 +53,11 @@ public class Responses : Singleton<Responses>
         }
     }
 
+    public void Replace(GameObject responseBubble)
+    {
+
+    }
+
     public void BubbleClicked(GameObject clickedBubble) 
     {
        

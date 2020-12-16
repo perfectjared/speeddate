@@ -227,10 +227,10 @@ MonoBehaviour:
     readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
-    pitchMode: 0
+    pitchMode: 2
     overridePitch: 1
     minPitch: 0.9
-    maxPitch: 1.2
+    maxPitch: 1.1
     speedReadPitch: 0
     fontData: {fileID: 0}
     quadData: {fileID: 0}
@@ -261,10 +261,10 @@ MonoBehaviour:
     readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
-    pitchMode: 0
+    pitchMode: 2
     overridePitch: 1
     minPitch: 0.9
-    maxPitch: 1.2
+    maxPitch: 1.1
     speedReadPitch: 0
     fontData: {fileID: 0}
     quadData: {fileID: 0}
@@ -295,10 +295,10 @@ MonoBehaviour:
     readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
-    pitchMode: 0
+    pitchMode: 2
     overridePitch: 1
     minPitch: 0.9
-    maxPitch: 1.2
+    maxPitch: 1.1
     speedReadPitch: 0
     fontData: {fileID: 0}
     quadData: {fileID: 0}
@@ -329,10 +329,10 @@ MonoBehaviour:
     readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
-    pitchMode: 0
+    pitchMode: 2
     overridePitch: 1
     minPitch: 0.9
-    maxPitch: 1.2
+    maxPitch: 1.1
     speedReadPitch: 0
     fontData: {fileID: 0}
     quadData: {fileID: 0}
@@ -363,10 +363,10 @@ MonoBehaviour:
     readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
-    pitchMode: 0
+    pitchMode: 2
     overridePitch: 1
     minPitch: 0.9
-    maxPitch: 1.2
+    maxPitch: 1.1
     speedReadPitch: 0
     fontData: {fileID: 0}
     quadData: {fileID: 0}
@@ -397,10 +397,10 @@ MonoBehaviour:
     readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
-    pitchMode: 0
+    pitchMode: 2
     overridePitch: 1
     minPitch: 0.9
-    maxPitch: 1.2
+    maxPitch: 1.1
     speedReadPitch: 0
     fontData: {fileID: 0}
     quadData: {fileID: 0}
@@ -431,10 +431,10 @@ MonoBehaviour:
     readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
-    pitchMode: 0
+    pitchMode: 2
     overridePitch: 1
     minPitch: 0.9
-    maxPitch: 1.2
+    maxPitch: 1.1
     speedReadPitch: 0
     fontData: {fileID: 0}
     quadData: {fileID: 0}
@@ -465,10 +465,10 @@ MonoBehaviour:
     readDelay: 0.1
     audioClipData: {fileID: 0}
     stopPreviousSound: 1
-    pitchMode: 0
+    pitchMode: 2
     overridePitch: 1
     minPitch: 0.9
-    maxPitch: 1.2
+    maxPitch: 1.1
     speedReadPitch: 0
     fontData: {fileID: 0}
     quadData: {fileID: 0}
@@ -500,10 +500,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 766ac1c993ce1964197df9105a46f658, type: 3}
   - {fileID: 8300000, guid: 98ed203aabf2d2a40901b899630c2ad6, type: 3}
   stopPreviousSound: 1
-  pitchMode: 0
+  pitchMode: 2
   overridePitch: 1
   minPitch: 0.9
-  maxPitch: 1.2
+  maxPitch: 1.1
   speedReadPitch: 0
   perlinPitchMulti: 1
   reading: 0
@@ -532,21 +532,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
   rawBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
-  topLeftBounds: {x: 197.2921, y: -1.097992, z: 0}
-  topRightBounds: {x: 197.2921, y: -101.220764, z: 0}
-  bottomLeftBounds: {x: 167.7079, y: -1.097992, z: 0}
-  bottomRightBounds: {x: 167.7079, y: -101.220764, z: 0}
-  centerBounds: {x: 182.5, y: -51.159378, z: 0}
-  topLeftTextBounds: {x: 197.2921, y: -35.835938, z: 0}
-  topRightTextBounds: {x: 197.2921, y: -66.48282, z: 0}
-  bottomLeftTextBounds: {x: 190.2921, y: -35.835938, z: 0}
-  bottomRightTextBounds: {x: 190.29211, y: -66.48282, z: 0}
-  centerTextBounds: {x: 193.79211, y: -51.159378, z: 0}
-  finalTopLeftTextBounds: {x: 197.2921, y: -35.835938, z: 0}
-  finalTopRightTextBounds: {x: 197.2921, y: -66.48282, z: 0}
-  finalBottomLeftTextBounds: {x: 190.2921, y: -35.835938, z: 0}
-  finalBottomRightTextBounds: {x: 190.29211, y: -66.48282, z: 0}
-  finalCenterTextBounds: {x: 193.79211, y: -51.159378, z: 0}
+  topLeftBounds: {x: 394.7921, y: 109.90201, z: 0}
+  topRightBounds: {x: 394.7921, y: 9.779236, z: 0}
+  bottomLeftBounds: {x: 365.2079, y: 109.90201, z: 0}
+  bottomRightBounds: {x: 365.2079, y: 9.779236, z: 0}
+  centerBounds: {x: 380, y: 59.840622, z: 0}
+  topLeftTextBounds: {x: 394.7921, y: 75.16406, z: 0}
+  topRightTextBounds: {x: 394.7921, y: 44.51718, z: 0}
+  bottomLeftTextBounds: {x: 387.7921, y: 75.16406, z: 0}
+  bottomRightTextBounds: {x: 387.7921, y: 44.51718, z: 0}
+  centerTextBounds: {x: 391.2921, y: 59.840622, z: 0}
+  finalTopLeftTextBounds: {x: 394.7921, y: 75.16406, z: 0}
+  finalTopRightTextBounds: {x: 394.7921, y: 44.51718, z: 0}
+  finalBottomLeftTextBounds: {x: 387.7921, y: 75.16406, z: 0}
+  finalBottomRightTextBounds: {x: 387.7921, y: 44.51718, z: 0}
+  finalCenterTextBounds: {x: 391.2921, y: 59.840622, z: 0}
   unwrappedBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
