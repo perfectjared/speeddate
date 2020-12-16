@@ -120,6 +120,6 @@ public class GameplayManager : Singleton<GameplayManager>
 
     public void ChangeFlow(bool drop = false) {
         if (drop) flow = 0.1f;
-        else flow = (0.5f > flow + flowAdd) ? flow + flowAdd : 0.5f;
+        else flow = (0.5f > flow + flowAdd) ? flow + flowAdd : 0.25f;
     }
 }

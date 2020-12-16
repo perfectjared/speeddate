@@ -56,7 +56,40 @@ public class DeckManager : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
+    Message message1 = new Message();
+    message1.sentence = "Howdy.";
+    message1.messageType = Message.MessageType.SmallTalk;
 
+    Message message2 = new Message();
+    message2.sentence = "Yee... Haw?";
+    message2.messageType = Message.MessageType.SmallTalk;
+
+    Message message3 = new Message();
+    message3.sentence = "You sure are awful purty.";
+    message3.messageType = Message.MessageType.SmallTalk;
+
+    Message message4 = new Message();
+    message4.messageType = Message.MessageType.Topic;
+    message4.topic = Character.Topic.Cats;
+    message4.sentence = "How's about uh... You like Cats?";
+
+    Message message5 = new Message();
+    message5.messageType = Message.MessageType.Feeling;
+    message5.feeling = 2;
+    message5.sentence = "I, uh, I like it. Yep.";
+
+    Message message6 = new Message();
+    message6.messageType = Message.MessageType.FeelingTopic;
+    message6.feeling = 3;
+    message6.topic = Character.Topic.Coffee;
+    message6.sentence = "I sure do love coffee,... What do you think?";
+
+    AddToDiscard(message1);
+    AddToDiscard(message2);
+    AddToDiscard(message3);
+    AddToDiscard(message4);
+    AddToDiscard(message5);
+    AddToDiscard(message6);
   }
 
   // Update is called once per frame
