@@ -133,7 +133,8 @@ public class GameplayManager : Singleton<GameplayManager>
     }
 
     public void ReceiveMessage(Message message) {
-        ChangeTopic(message.topic);
+        if (message.messageType != Message.MessageType.SmallTalk &&
+        message.messageType != Message.MessageType.Feeling) ChangeTopic(message.topic);
         character.ReceiveMessage(message);
         chatBox.ReceiveMessage(message, false);
     }
