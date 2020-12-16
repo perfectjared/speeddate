@@ -53,6 +53,6 @@ public class Crosshair : Singleton<Crosshair>
     public void Reload() {
         ammo = 6;
         ammoChange.Invoke(ammo);
-        audioManager.Play("Empty");
+        audioManager.Play("Reload");
     }
 }

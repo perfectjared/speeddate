@@ -45,27 +45,33 @@ public class ChatBox : MonoBehaviour
         }
     }
 
-    public void ReceiveMessage(Message msg, bool player = true) {
+    public void ReceiveMessage(Message msg, bool character = true) {
 		bubbleMessage.messageType = msg.messageType;
 		bubbleMessage.feeling = msg.feeling;
 		bubbleMessage.topic = msg.topic;
 		bubbleMessage.sentence = msg.sentence;
-		SpawnSpeechBubble(true);
+		SpawnSpeechBubble(character);
 	}
 	
 	// Instatiates a speech bubble prefab
-    public void SpawnSpeechBubble(bool received = false)
+    public void SpawnSpeechBubble(bool character)
 	{
-		var newBubble = Instantiate(speechBubble, chatWindow);
+		GameObject newBubble;
+		if (!character) {
+			newBubble = Instantiate(playerSpeechBubble, chatWindow);
+		} else {
+			newBubble = Instantiate(speechBubble, chatWindow);
+		}
+
+		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
+		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
+		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
+
 		var tempMessage = newBubble.AddComponent<Message>();
 		tempMessage.messageType = bubbleMessage.messageType;
 		tempMessage.feeling = bubbleMessage.feeling;
 		tempMessage.topic = bubbleMessage.topic;
 		tempMessage.sentence = bubbleMessage.sentence;
-
-		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
-		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
-		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
 
 		message = newBubble.GetComponentInChildren<SuperTextMesh>();
 		fadeText = true;
