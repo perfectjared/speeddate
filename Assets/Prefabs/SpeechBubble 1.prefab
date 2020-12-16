@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1072909099784865277}
   - component: {fileID: 2872809816830925691}
   m_Layer: 0
-  m_Name: SpeechBubble
+  m_Name: SpeechBubble 1
   m_TagString: SpeechBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6973756448838126680}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -143.08179, y: -150.9726}
+  m_AnchoredPosition: {x: 16.918213, y: -240.9726}
   m_SizeDelta: {x: 266.63757, y: 90}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6973756448838126683
@@ -532,21 +532,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
   rawBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
-  topLeftBounds: {x: 300.21033, y: 51.929398, z: 0}
-  topRightBounds: {x: 300.2103, y: -48.19342, z: 0}
-  bottomLeftBounds: {x: 270.6261, y: 51.929398, z: 0}
-  bottomRightBounds: {x: 270.6261, y: -48.19339, z: 0}
-  centerBounds: {x: 285.4182, y: 1.8680038, z: 0}
-  topLeftTextBounds: {x: 300.21033, y: 17.191437, z: 0}
-  topRightTextBounds: {x: 300.21033, y: -13.455444, z: 0}
-  bottomLeftTextBounds: {x: 293.21033, y: 17.191437, z: 0}
-  bottomRightTextBounds: {x: 293.21033, y: -13.455444, z: 0}
-  centerTextBounds: {x: 296.71033, y: 1.8679962, z: 0}
-  finalTopLeftTextBounds: {x: 300.21033, y: 17.191437, z: 0}
-  finalTopRightTextBounds: {x: 300.21033, y: -13.455444, z: 0}
-  finalBottomLeftTextBounds: {x: 293.21033, y: 17.191437, z: 0}
-  finalBottomRightTextBounds: {x: 293.21033, y: -13.455444, z: 0}
-  finalCenterTextBounds: {x: 296.71033, y: 1.8679962, z: 0}
+  topLeftBounds: {x: 386.21033, y: -79.57059, z: 0}
+  topRightBounds: {x: 386.21033, y: -179.69336, z: 0}
+  bottomLeftBounds: {x: 356.62613, y: -79.57059, z: 0}
+  bottomRightBounds: {x: 356.62613, y: -179.69336, z: 0}
+  centerBounds: {x: 371.4182, y: -129.63197, z: 0}
+  topLeftTextBounds: {x: 386.21033, y: -114.30853, z: 0}
+  topRightTextBounds: {x: 386.21033, y: -144.95541, z: 0}
+  bottomLeftTextBounds: {x: 379.21033, y: -114.30853, z: 0}
+  bottomRightTextBounds: {x: 379.21033, y: -144.95541, z: 0}
+  centerTextBounds: {x: 382.71033, y: -129.63197, z: 0}
+  finalTopLeftTextBounds: {x: 386.21033, y: -114.30853, z: 0}
+  finalTopRightTextBounds: {x: 386.21033, y: -144.95541, z: 0}
+  finalBottomLeftTextBounds: {x: 379.21033, y: -114.30853, z: 0}
+  finalBottomRightTextBounds: {x: 379.21033, y: -144.95541, z: 0}
+  finalCenterTextBounds: {x: 382.71033, y: -129.63197, z: 0}
   unwrappedBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
