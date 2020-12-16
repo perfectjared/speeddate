@@ -52,7 +52,7 @@ public class Character : MonoBehaviour
 
     public void Denitialize() {
         active = false;
-        GetComponent<RectTransform>().localPosition = new Vector3(-400, -30, 0);
+        //GetComponent<RectTransform>().localPosition = new Vector3(-400, -30, 0);
         timeToSpeak = .1f;
     }
 

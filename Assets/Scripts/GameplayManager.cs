@@ -56,7 +56,7 @@ public class GameplayManager : Singleton<GameplayManager>
     private void NextCharacter() {
         if (character) 
         {
-            character.gameObject.GetComponent<RectTransform>().LeanMoveLocalX(850, 3).setEaseInOutSine();
+            character.gameObject.GetComponent<RectTransform>().LeanMoveLocalX(-400, 1f).setEaseInOutSine();
             character.Denitialize();            
         }   
         flow = 0.1f;
