@@ -14,6 +14,7 @@ public class ResponseBubble : MonoBehaviour
     private RawImage rawImage;
     private Vector3 scaleTo = new Vector3(1.1f, 1.1f, 0);
     private Vector3 scaleFrom = new Vector3(1f, 1f, 0);
+    private Responses responses;
 
     private void OnGUI()
     {
@@ -24,6 +25,7 @@ public class ResponseBubble : MonoBehaviour
     {
         rawImage = GetComponent<RawImage>();
         newMessage = GetComponentInChildren<Text>();
+        responses = FindObjectOfType<Responses>();
         message = DeckManager.Instance.drawOne();
         newMessage.text = message.sentence;
         SetMessage(message);
@@ -33,8 +35,9 @@ public class ResponseBubble : MonoBehaviour
     {
         if (Crosshair.Instance.ammo > 0) {
             Responses.Instance.BubbleClicked(this.gameObject);
-            GameplayManager.Instance.ReceiveMessage(message);
+            GameplayManager.Instance.ReceiveMessage(message); // BE IN THE PLAY STATE 4HEAD
             DeckManager.Instance.AddToDiscard(message);
+            responses.Replace(this.gameObject);
             Destroy(this.gameObject);
         }
     }

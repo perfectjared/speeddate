@@ -53,6 +53,30 @@ public class Responses : Singleton<Responses>
         }
     }
 
+    public void Replace(GameObject responseBubble)
+    {      
+        if (responseBubble.name == "Top")
+        {
+            responseBubble = Instantiate(top, spawnPos.position, Quaternion.identity, this.transform);
+            responseBubble.name = "Top";
+            DisplayResponse(responseBubble);
+        }
+
+        if(responseBubble.name == "Middle")
+        {
+            responseBubble = Instantiate(middle, spawnPos.position, Quaternion.identity, this.transform);
+            responseBubble.name = "Middle";
+            DisplayResponse(responseBubble);
+        }
+
+        if (responseBubble.name == "Bottom")
+        {
+            responseBubble = Instantiate(bottom, spawnPos.position, Quaternion.identity, this.transform);
+            responseBubble.name = "Bottom";
+            DisplayResponse(responseBubble);
+        }
+    }
+
     public void BubbleClicked(GameObject clickedBubble) 
     {
        
