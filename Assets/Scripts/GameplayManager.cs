@@ -90,10 +90,8 @@ public class GameplayManager : Singleton<GameplayManager>
         yield return new WaitForEndOfFrame();
     }
 
-    public void ShotObject(GameObject shotObject) {
-        //this.shotObject = shotObject;
-        //if own message, send to character, put in discard, remove from hand, draw new message
-        //if character message, add to discard, make message not takeable anymore
+    public void ShootMessage(Message message) {
+        Debug.Log(message.sentence);
     }
 
     public void AffectionChange(float value) {

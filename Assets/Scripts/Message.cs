@@ -23,11 +23,6 @@ public class Message : MonoBehaviour
         } else { randomMessage(); }
     }
 
-    [Button]
-    public void Test() {
-        new Message();
-    }
-
     public void randomMessage() {
         this.messageType = (MessageType)Random.Range(0,4);
         this.topic = (Character.Topic)Random.Range(0, 10);

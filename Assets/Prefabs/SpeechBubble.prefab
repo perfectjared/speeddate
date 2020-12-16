@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6973756448838126683}
   - component: {fileID: 6973756448838126682}
   - component: {fileID: 1072909099784865277}
+  - component: {fileID: 2872809816830925691}
   m_Layer: 0
   m_Name: SpeechBubble
   m_TagString: SpeechBubble
@@ -115,7 +116,30 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6973756448838126682}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2872809816830925691}
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2872809816830925691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6973756448838126680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e01fdab87dde43fb9c3f3decba4feca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6973756449859818410
 GameObject:
   m_ObjectHideFlags: 0
