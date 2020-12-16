@@ -19,7 +19,6 @@ public class Message : MonoBehaviour
         this.messageType = messageType;
         this.topic = topic;
         this.feeling = feeling;
-        this.sentence = GenerateSentence();
         } else { randomMessage(); }
     }
 
@@ -28,11 +27,5 @@ public class Message : MonoBehaviour
         this.topic = (Character.Topic)Random.Range(0, 10);
         this.feeling = (int)Random.Range(-3, 4);
         this.sentence = "message: " + messageType.ToString() + ", topic: " + topic.ToString() + ", feeling: " + feeling;
-    }
-
-
-    private string GenerateSentence() {
-        //TEMP obviously
-        return this.sentence = ("message: " + messageType.ToString() + ", topic: " + topic.ToString() + ", feeling: " + feeling);
     }
 }

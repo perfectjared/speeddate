@@ -1,0 +1,10 @@
+{
+    "feeling":["The truth is dahling, I simply & it.", "I rather do believe I & it.",
+       "If put to the task, I must admit I & that.", "Ah! I so dreadfully & that"],
+     "topic": ["I have been wondering, what are your thoughts on $?", "How do you feel about $? I myself have been thinking about it quite a lot lately.",
+       "Oh, dahling, that does make me think of $."],
+     "feelingTopic" : ["The state of $ today. I utterly & it.", "Dahling, have you heard of $? Without a doubt I & it.",
+     "Apparently $ is coming back into style. Personally, I & in that sort of thing."],
+     "smallTalk" : ["Dreary weather isn’t it?", "Isn’t this restaurant the cat’s pajamas?",
+        "Do you happen to know of any world-class japes?", "Isn't small talk so dreadfully dull?"]
+  }
