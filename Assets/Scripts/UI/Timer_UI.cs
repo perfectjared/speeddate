@@ -12,7 +12,7 @@ public class Timer_UI : MonoBehaviour
     }
     public void setTime(int time) {
         this.time = time;
-        stm.text = time + "";
+        stm.text = (time < 11) ? "<j>" + time : time + "";
         stm.Rebuild();
     }
 }

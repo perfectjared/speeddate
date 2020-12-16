@@ -2,54 +2,76 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityTracery;
 
-public class Responses : MonoBehaviour
+public class Responses : Singleton<Responses>
 {
-    public RectTransform response_top, response_middle, response_bottom;
-    public Texture[] bubbleColors;
+    public GameObject top, middle, bottom;
     public Vector3 topPos, middlePos, bottomPos;
+    public RectTransform spawnPos;
+    private Vector3 startPos = new Vector3(270,-200,0);
 
-    private Vector3 startPos = new Vector3(0,-250,0);
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        InitialiseResponses();
-    }
 
     // Hides the responses and resets thier rotation
     public void InitialiseResponses()
     {
-        response_bottom.localPosition = startPos;        
-        response_middle.localPosition = startPos;
-        response_top.localPosition = startPos;
+        GameObject newTop;
+        GameObject newMiddle;
+        GameObject newBottom;
 
-        response_top.rotation = Quaternion.identity;
-        response_middle.rotation = Quaternion.identity;
+        if (GameObject.Find("Top"))
+        {
+            Destroy(GameObject.Find("Top"));
+        }
+
+        if (GameObject.Find("Middle"))
+        {
+            Destroy(GameObject.Find("Middle"));
+        }
+
+        if (GameObject.Find("Bottom"))
+        {
+            Destroy(GameObject.Find("Bottom"));
+        }
+
+        newTop = Instantiate(top, spawnPos.position, Quaternion.identity, this.transform);
+        newTop.name = "Top";
+        DisplayResponse(newTop);
+
+        newMiddle = Instantiate(middle, spawnPos.position, Quaternion.identity, this.transform);
+        newMiddle.name = "Middle";
+        DisplayResponse(newMiddle);
+
+        newBottom = Instantiate(bottom, spawnPos.position, Quaternion.identity, this.transform);
+        newBottom.name = "Bottom";
+        DisplayResponse(newBottom);
     }
 
-    // Gives the responses a random image and displayes it on screen
-    public void ShowResponses()
+    public void BubbleClicked(GameObject clickedBubble) 
     {
-        //NOTE: I have no idea how we're gonna make the response bubbles be based on the message type
+       
+    }
 
-        var topImage = response_top.GetComponent<RawImage>();
-        var middleImage = response_middle.GetComponent<RawImage>();
-        var bottomImage = response_bottom.GetComponent<RawImage>();
-        
-        // Moves and rotates the top bubble
-        response_top.LeanMoveLocal(topPos, 0.7f).setEaseSpring();
-        response_top.LeanRotateZ(-32, 1f).setEaseOutElastic();
-        // Moves and rotates the middle bubble
-        response_middle.LeanMoveLocal(middlePos, 0.6f).setEaseSpring();
-        response_middle.LeanRotateZ(-16, 1f).setEaseOutElastic();
-        // Moves the bottom bubble
-        response_bottom.LeanMoveLocal(bottomPos, 0.5f).setEaseSpring();
+    public void DisplayResponse(GameObject responseBubble)
+    {
+        //NOTE: I have no idea how we're gonna make the response bubbles be based on the message type     
 
-        // Randomly assigns a texture
-        topImage.texture = bubbleColors[Random.Range(0, 4)];
-        middleImage.texture = bubbleColors[Random.Range(0, 4)];
-        bottomImage.texture = bubbleColors[Random.Range(0, 4)];
+        if (responseBubble.name == "Top")
+        {
+            responseBubble.LeanMoveLocal(topPos, 0.7f).setEaseSpring();
+            responseBubble.LeanRotateZ(-32, 1f).setEaseOutElastic();
+        }
+
+        if (responseBubble.name == "Middle")
+        {
+            responseBubble.LeanMoveLocal(middlePos, 0.7f).setEaseSpring();
+            responseBubble.LeanRotateZ(-16, 1f).setEaseOutElastic();
+        }
+
+        if (responseBubble.name == "Bottom")
+        {
+            responseBubble.LeanMoveLocal(bottomPos, 0.5f).setEaseSpring();
+        }              
     }
 }

@@ -54,20 +54,19 @@ public class ChatBox : MonoBehaviour
 		bubbleMessage.feeling = msg.feeling;
 		bubbleMessage.topic = msg.topic;
 		bubbleMessage.sentence = msg.sentence;
-		SpawnSpeechBubble();
+		SpawnSpeechBubble(true);
 	}
 	
 	// Instatiates a speech bubble prefab
-    public void SpawnSpeechBubble()
+    public void SpawnSpeechBubble(bool received = false)
 	{
 		var newBubble = Instantiate(speechBubble, chatWindow);
-<<<<<<< HEAD
-=======
-
 		var tempMessage = newBubble.AddComponent<Message>();
-		tempMessage = bubbleMessage;
+		tempMessage.messageType = bubbleMessage.messageType;
+		tempMessage.feeling = bubbleMessage.feeling;
+		tempMessage.topic = bubbleMessage.topic;
+		tempMessage.sentence = bubbleMessage.sentence;
 
->>>>>>> jared
 		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
 		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
 		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);

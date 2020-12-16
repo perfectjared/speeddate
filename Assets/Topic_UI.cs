@@ -27,7 +27,7 @@ public class Topic_UI : MonoBehaviour
     }
 
     private void ChangeText() {
-        stm.text = topic;
+        stm.text = "<w>" + topic.ToUpper();
         stm.Rebuild();
     }
 }

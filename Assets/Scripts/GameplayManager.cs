@@ -6,23 +6,21 @@ using NaughtyAttributes;
 enum State { Start, Play, Transition, Pause, Cutscene, End};
 public class GameplayManager : Singleton<GameplayManager>
 {
+    public ChatBox chatBox;
+    
     [SerializeField]
     private Character character;
     [SerializeField]
     private int characterAt = 0;
     public List<GameObject> characters = new List<GameObject>();
-    public ChatBox chatBox;
 
     [SerializeField]
     private int round = 0;
 
-    [SerializeField]
     [Range(0.1f, 0.5f)]
     public float flow = 0.1f;
     [Range(0.01f, 0.1f)]
     public float flowAdd = 0.05f;
-    [SerializeField]
-    private GameObject shotObject;
 
     public Character.Topic topic = Character.Topic.None;
     
@@ -31,10 +29,12 @@ public class GameplayManager : Singleton<GameplayManager>
     public _UnityEventString topicChange;
 
     private Timer timer;
+    private DeckManager deckManager;
 
 
     void Start() {
         timer = GetComponent<Timer>();
+        deckManager = GetComponent<DeckManager>();
     }
 
     public void StartPlay() {
@@ -71,14 +71,15 @@ public class GameplayManager : Singleton<GameplayManager>
             timer.Reset();
             timer.StartTimer();
             ChangeTopic(Character.Topic.None);
+            chatBox.DeleteChatBoxes();
             StartCoroutine(WaitForTimer());
         }
     }
 
     [Button]
     public void RespondRandomly() {
-        character.ReceiveMessage(new Message());
-        flow += flowAdd;
+        ReceiveMessage(new Message());
+        flow = (0.5f > flow + flowAdd) ? flow + flowAdd : 0.5f;
     }
 
     private IEnumerator WaitForTimer() {
@@ -89,10 +90,8 @@ public class GameplayManager : Singleton<GameplayManager>
         yield return new WaitForEndOfFrame();
     }
 
-    public void ShotObject(GameObject shotObject) {
-        this.shotObject = shotObject;
-        //if own message, send to character, put in discard, remove from hand, draw new message
-        //if character message, add to discard, make message not takeable anymore
+    public void ShootMessage(Message message) {
+        deckManager.AddToDeck(message);
     }
 
     public void AffectionChange(float value) {
@@ -117,5 +116,10 @@ public class GameplayManager : Singleton<GameplayManager>
     private void ChangeTopic(Character.Topic topic) {
         this.topic = topic;
         topicChange.Invoke(topic.ToString());
+    }
+
+    public void ChangeFlow(bool drop = false) {
+        if (drop) flow = 0.1f;
+        else flow = (0.5f > flow + flowAdd) ? flow + flowAdd : 0.25f;
     }
 }

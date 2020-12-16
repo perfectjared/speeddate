@@ -9,6 +9,8 @@ public class Character : MonoBehaviour
         None, Hiking, Fracking, Cats, Dogs, Baking, Reading, TV, Coffee, Tea, Gardening
     };
     
+    public List<Texture> images;
+
     [Range(0.0f, 100.0f)]
     public float affection = 0;
     [Range(0.0f, 1.0f)]
@@ -60,6 +62,9 @@ public class Character : MonoBehaviour
     }
 
     public void AddAffection(float val) {
+        if (val > 0) GameplayManager.Instance.ChangeFlow();
+        else GameplayManager.Instance.ChangeFlow(true);
+        
         affection += val * flow;
         if (affection < 0) affection = 0;
         GameplayManager.Instance.AffectionChange(affection);

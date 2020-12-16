@@ -16,12 +16,17 @@ public class Tips : MonoBehaviour
 
     public void Combo()
     {
-        ToolTips.ShowTooltip_Static("Flow Meter: Reflects teh speed of the conversation");
+        ToolTips.ShowTooltip_Static("Flow Meter: Reflects the speed of the conversation");
     }
 
     public void Time()
     {
         ToolTips.ShowTooltip_Static("How much time you have before the next round");
+    }
+
+    public void Ammo()
+    {
+        ToolTips.ShowTooltip_Static("Ammo Count: You can only click on bubbles whilst you have ammo");
     }
 
     public void HideTip()
