@@ -7,9 +7,13 @@ enum State { Start, Play, Transition, Pause, Cutscene, End};
 public class GameplayManager : Singleton<GameplayManager>
 {
     public ChatBox chatBox;
-    
+
     [SerializeField]
     private Character character;
+<<<<<<< HEAD
+=======
+    [SerializeField]
+>>>>>>> celeste
     public int characterAt = 0;
     public List<GameObject> characters = new List<GameObject>();
 
@@ -22,7 +26,7 @@ public class GameplayManager : Singleton<GameplayManager>
     public float flowAdd = 0.05f;
 
     public Character.Topic topic = Character.Topic.None;
-    
+
     public _UnityEventFloat affectionChange;
     public _UnityEventFloat flowChange;
     public _UnityEventString topicChange;
@@ -61,7 +65,7 @@ public class GameplayManager : Singleton<GameplayManager>
         }   
         flow = 0.1f;
         characterAt++;
-        
+
         if (characterAt > characters.Count) {
             round++;
             characterAt = 1;
