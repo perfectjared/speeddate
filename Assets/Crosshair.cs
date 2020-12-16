@@ -13,6 +13,7 @@ public class Crosshair : Singleton<Crosshair>
     public AudioSource noShootSource;
     public AudioSource reloadSource;
     public _UnityEventInt ammoChange;
+    public bool onscreen = false;
 
     private bool shooting = false;
     
@@ -37,6 +38,14 @@ public class Crosshair : Singleton<Crosshair>
        if (!Input.GetMouseButtonDown(0) && shooting) {
            shooting = false;
        }
+    }
+
+    void OnMouseEnter() {
+        onscreen = true;
+    }
+
+    void OnMouseExit() {
+        onscreen = false;
     }
 
     void Reload() {
