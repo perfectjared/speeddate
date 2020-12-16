@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jared3.unity
     guid: 31b8d1a2e7aa2409eb7daba6ba6b399b
+  - enabled: 1
+    path: Assets/Scenes/youdidit.unity
+    guid: a323f76d3737d434c8e5afbf3d81fb41
   m_configObjects: {}

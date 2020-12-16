@@ -30,8 +30,8 @@ public class TutorialImages : MonoBehaviour
 
         rectTransform.LeanAlpha(1, 0.5f);
         
-        crosshair = FindObjectOfType<Crosshair>();
-        crosshair.enabled = false;
+        //crosshair = FindObjectOfType<Crosshair>();
+        //crosshair.enabled = false;
     }
 
     public void FadeIn()
@@ -78,7 +78,11 @@ public class TutorialImages : MonoBehaviour
             else if (slide.GetComponent<RawImage>().texture == TutorialSlides[4])
             {
                 FadeOut();
+                GameStateMachine.Instance.Next();
+                GameStateMachine.Instance.Next();
+                Crosshair.Instance.Reload();
                 pressSpace.gameObject.SetActive(false);
+                GameObject.Find("Tutorial Slides").SetActive(false);
             }
         }
 

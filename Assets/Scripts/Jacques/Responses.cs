@@ -50,6 +50,8 @@ public class Responses : Singleton<Responses>
             newBottom = Instantiate(bottom, spawnPos.position, Quaternion.identity, this.transform);
             newBottom.name = "Bottom";
             DisplayResponse(newBottom);
+
+            GameplayManager.Instance.ChangeFlow(true);
         }
     }
 

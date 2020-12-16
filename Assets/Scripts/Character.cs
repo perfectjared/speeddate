@@ -67,12 +67,12 @@ public class Character : MonoBehaviour
             AddAffection(2.5f);
             React(0);
         } else if (msg.messageType == Message.MessageType.Feeling) {
-            difference = (int)Mathf.Abs(sentiments[(int)msg.topic] - msg.feeling);
+            difference = (int)Mathf.Abs(sentiments[(int)this.topic] - msg.feeling);
             AddAffection(3 - difference);
             React(difference);
         } else if (msg.messageType == Message.MessageType.FeelingTopic) {
             ChangeTopic();
-            difference = (int)Mathf.Abs(sentiments[(int)msg.topic] - msg.feeling);
+            difference = (int)Mathf.Abs(sentiments[(int)this.topic] - msg.feeling);
             AddAffection((3 - difference) * 2f);
             React(difference);
         }
@@ -85,10 +85,12 @@ public class Character : MonoBehaviour
         affection += val;
         if (affection < 0) affection = 0;
         GameplayManager.Instance.AffectionChange(affection);
+        if (affection >= 100) SceneManager.LoadScene("youdidit", LoadSceneMode.Single);
     }
 
     private void React(int value) {
         int listAt = 0;
+        Debug.Log(value);
         switch (value) {
             case 0:
             case 1:
