@@ -60,7 +60,7 @@ public class Character : MonoBehaviour
         if (msg.messageType == Message.MessageType.Topic) {
             ChangeTopic();
         } else if (msg.messageType == Message.MessageType.SmallTalk) {
-            AddAffection(5f);
+            AddAffection(2.5f);
             React(0);
         } else if (msg.messageType == Message.MessageType.Feeling) {
             difference = (int)Mathf.Abs(sentiments[(int)msg.topic] - msg.feeling);
@@ -88,10 +88,8 @@ public class Character : MonoBehaviour
         switch (value) {
             case 0:
             case 1:
-            case 2:
             listAt = 1;
             break;
-            case 3:
             case 4:
             case 5:
             case 6:
