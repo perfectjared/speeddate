@@ -55,7 +55,11 @@ public class GameplayManager : Singleton<GameplayManager>
 
     [Button]
     private void NextCharacter() {
-        if (character) character.Denitialize();
+        if (character) 
+        { 
+            character.Denitialize();
+            character.gameObject.GetComponent<RectTransform>().LeanMoveLocalX(850, 3).setEaseInOutSine().setOnComplete(ResetPlayerPos);
+        }
         flow = 0.1f;
         characterAt++;
         
@@ -69,6 +73,20 @@ public class GameplayManager : Singleton<GameplayManager>
         } else {
             character = characters[characterAt - 1].GetComponent<Character>();
             character.Initialize();
+            //Move Char on screen
+
+            switch (characterAt - 1)
+            {
+                case 0:
+                    character.gameObject.GetComponent<RectTransform>().LeanMoveLocalX(-100, 2).setEaseInOutSine();
+                    break;
+                case 1:
+                    character.gameObject.GetComponent<RectTransform>().LeanMoveLocalX(-44, 2).setEaseInOutSine();
+                    break;
+                case 2:
+                    character.gameObject.GetComponent<RectTransform>().LeanMoveLocalX(-100, 2).setEaseInOutSine();
+                    break;
+            }
             timer.Reset();
             timer.StartTimer();
             ChangeTopic(Character.Topic.None);
@@ -78,9 +96,15 @@ public class GameplayManager : Singleton<GameplayManager>
     }
 
     [Button]
-    public void RespondRandomly() {
+    public void RespondRandomly()
+    {
         ReceiveMessage(new Message());
         flow = (0.5f > flow + flowAdd) ? flow + flowAdd : 0.5f;
+    }
+
+    public void ResetPlayerPos()
+    {
+        character.gameObject.GetComponent<RectTransform>().position = new Vector3(-400, -30, 0); 
     }
 
     private IEnumerator WaitForTimer() {
