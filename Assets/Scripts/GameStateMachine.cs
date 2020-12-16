@@ -29,7 +29,6 @@ public class GameStateMachine : Singleton<GameStateMachine>
 
         StartState(true);
     }
-
     public void ShotObject(GameObject shotObject) {
         this.shotObject = shotObject;
     }

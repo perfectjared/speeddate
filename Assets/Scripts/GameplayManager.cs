@@ -10,8 +10,7 @@ public class GameplayManager : Singleton<GameplayManager>
     
     [SerializeField]
     private Character character;
-    [SerializeField]
-    private int characterAt = 0;
+    public int characterAt = 0;
     public List<GameObject> characters = new List<GameObject>();
 
     [SerializeField]
