@@ -4,6 +4,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using UnityTracery;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
@@ -27,10 +28,12 @@ public class Character : MonoBehaviour
     private Character.Topic topic;
     public TextAsset GrammarFile;
     public TraceryGrammar Grammar;
+    public AudioManager audioManager;
 
     private void Start() {
         Grammar = new TraceryGrammar(GrammarFile.text);
         image = GetComponent<RawImage>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     
     void Update() {
@@ -90,11 +93,17 @@ public class Character : MonoBehaviour
             case 0:
             case 1:
             listAt = 1;
+            audioManager.Play("Good");
+            break;
+            case 2:
+            case 3:
+            audioManager.Play("Eh");
             break;
             case 4:
             case 5:
             case 6:
             listAt = 2;
+            audioManager.Play("Bad");
             break;
         }
         if (listAt != 0) {

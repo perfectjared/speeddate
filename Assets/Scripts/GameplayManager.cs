@@ -10,10 +10,6 @@ public class GameplayManager : Singleton<GameplayManager>
 
     [SerializeField]
     private Character character;
-<<<<<<< HEAD
-=======
-    [SerializeField]
->>>>>>> celeste
     public int characterAt = 0;
     public List<GameObject> characters = new List<GameObject>();
 
@@ -24,6 +20,7 @@ public class GameplayManager : Singleton<GameplayManager>
     public float flow = 0.1f;
     [Range(0.01f, 0.1f)]
     public float flowAdd = 0.05f;
+    public AudioManager audioManager;
 
     public Character.Topic topic = Character.Topic.None;
 
@@ -38,6 +35,7 @@ public class GameplayManager : Singleton<GameplayManager>
     void Start() {
         timer = GetComponent<Timer>();
         deckManager = GetComponent<DeckManager>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void StartPlay() {
@@ -74,7 +72,7 @@ public class GameplayManager : Singleton<GameplayManager>
             character = characters[characterAt - 1].GetComponent<Character>();
             character.Initialize();
             //Move Char on screen
-
+            audioManager.Play("Whistle");
             switch (characterAt - 1)
             {
                 case 0:

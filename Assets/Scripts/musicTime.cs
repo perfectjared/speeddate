@@ -14,6 +14,7 @@ public class musicTime : MonoBehaviour
 
   public bool firstMusic;
   public bool switched;
+  public float maxVol = 0.8f;
 
   //characterAt indexes 1 == pierre 2 == aubrey 3 == amber
 
@@ -88,7 +89,10 @@ public class musicTime : MonoBehaviour
       Debug.Log("Crossfade Called");
       while(speakers[pointyNow].volume > 0.0f){
         speakers[pointyNow].volume -= Time.deltaTime;
-        speakers[pointyLater].volume +=Time.deltaTime * 10;
+        if (speakers[pointyLater].volume < maxVol) {
+          speakers[pointyLater].volume +=Time.deltaTime * 10;
+        }
+        if (speakers[pointyLater].volume > maxVol) speakers[pointyLater].volume = maxVol;
         yield return new WaitForEndOfFrame();
       }
       yield return new WaitForEndOfFrame();
