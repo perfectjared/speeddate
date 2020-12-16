@@ -7,10 +7,12 @@ public class SpeechBubble : MonoBehaviour
 {
     private Message message;
     public void Click() {
-        message = GetComponent<Message>();
-        if (message) {
-            GameplayManager.Instance.ShootMessage(message);
-            GetComponent<Button>().interactable = false;
+        if (Crosshair.Instance.ammo > 0) {
+            message = GetComponent<Message>();
+            if (message) {
+                GameplayManager.Instance.ShootMessage(message);
+                GetComponent<Button>().interactable = false;
+            }
         }
     }
 }

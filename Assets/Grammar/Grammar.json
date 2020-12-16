@@ -10,14 +10,35 @@
   "question": ["what say you?", "worth considering is it not?",
     "what do you zink?", "you are speechless, no?", "'ave you something to say?"],
 
-  "feeling": ["The more I linger on it, the more I & it.", "I am enveloped by & towards it.",
-    "Is zis ennui I feel? No, I simply & it.", "Zis brings me naught but feelings of & when I dwell on it."],
+  "feeling": ["The more I linger on it, the more I & it.", "When I am enveloped by it I am & that.",
+    "Is zis ennui I feel? No, I simply & it.", "Zis brings me naught but feelings of & when I dwell on that."],
   "topic": ["I doubt you 'ave, but I 'ave studied $.", "Let us speak of $.", "The aroma of this wine causes me to think of $.",
-  "Enough games. I must talk of $.", "And so the conversation turns naturally to $!"],
-  "feelingTopic" : ["Ah, zis makes me think of $. I suppose I & it.", "But what of $? Personally, I & it.",
+  "Enough games, yankee. I must talk of $.", "And so the conversation turns naturally to $!"],
+  "feelingTopic" : ["Ah, zis makes me think of $. I suppose I & it.", "But what of $? Personally, I & that.",
   "I have visions of $. I assure you that I & it."],
   "smallTalk" : ["I zink you would look lovely in the moonlight." "I am incredibly wealthy. Impressive, no?",
-     "I weep when I see a lonesome cloud", "I am making ze small talk"]
+     "I weep when I see a lonesome cloud", "I am making ze small talk"],
 
+}
 
+{
+  "feeling": ["I & that.", "My studies would imply that I & it.",
+    "According to my sensors, I & it.", "I & it. At least I think I do."],
+  "topic": ["What do you think about $?", "Lately I've been looking into $.",
+  "Sooooooooo...$? Am I right?", "I've been thinking 'bout $ a lot."],
+  "feelingTopic" : ["Oh, that reminds of $. I & that.", "What do you think about $? Honestly, I kinda & it",
+  "I've been reading about $. I think I & it."],
+  "smallTalk" : ["Sooooooo...What's up?", "*Cough*", "Uhhhhhh...",
+     "How's it going?", "Sorry, I'm not much for small talk."]
+}
+
+{
+  "feeling":["The truth is dahling, I simply & it.", "I rather do believe I & it.",
+     "If put to the task, I must admit I & that.", "Ah! I so dreadfully & that"],
+   "topic": ["I have been wondering, what are your thoughts on $?", "How do you feel about $? I myself have been thinking about it quite a lot lately.",
+     "Oh, dahling, that does make me think of $."],
+   "feelingTopic" : ["The state of $ today. I utterly & it.", "Dahling, have you heard of $? Without a doubt I & it.",
+   "Apparently $ is coming back into style. Personally, I & in that sort of thing."],
+   "smallTalk" : ["Dreary weather isn’t it?" "Isn’t this restaurant the cat’s pajamas?",
+      "Do you happen to know of any world-class japes?", "Isn't small talk so dreadfully dull?"]
 }
