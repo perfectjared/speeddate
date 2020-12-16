@@ -17,7 +17,7 @@ public class ToolTips : MonoBehaviour
         instance = this;
         rectTransformBG = transform.Find("BG").GetComponent<RectTransform>();
         tooltipText = transform.Find("tt").GetComponent<Text>();
-        //ShowToolTip("This is a tooltip");
+        this.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -26,13 +26,12 @@ public class ToolTips : MonoBehaviour
 
         if(Input.mousePosition.x > 660)
         {
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), new Vector2(Input.mousePosition.x - 600, Input.mousePosition.y + 50), uiCam, out localPoint);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), new Vector2(Input.mousePosition.x - 700, Input.mousePosition.y), uiCam, out localPoint);
         }
         else
         {
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), new Vector2(Input.mousePosition.x + 50, Input.mousePosition.y), uiCam, out localPoint);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), new Vector2(Input.mousePosition.x + 300, Input.mousePosition.y), uiCam, out localPoint);
         }
-
 
         transform.localPosition = localPoint;
     }

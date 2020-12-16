@@ -6,10 +6,12 @@ using UnityEngine;
 public class ResponseBubble : MonoBehaviour
 {
     public Message message;
-    public Texture[] bubbleColors;
+    [SerializeField]
+    private Texture[] bubbleColors;
 
     private Text newMessage;
     private RectTransform rectTransform;
+    private RawImage rawImage;
     private Vector3 scaleTo = new Vector3(1.1f, 1.1f, 0);
     private Vector3 scaleFrom = new Vector3(1f, 1f, 0);
 
@@ -20,9 +22,11 @@ public class ResponseBubble : MonoBehaviour
 
     private void Start()
     {
+        rawImage = GetComponent<RawImage>();
         newMessage = GetComponentInChildren<Text>();
         message = DeckManager.Instance.drawOne();
         newMessage.text = message.sentence;
+        SetMessage(message);
     }
 
     public void Click()
@@ -46,13 +50,17 @@ public class ResponseBubble : MonoBehaviour
         message = msg;
         switch (message.messageType)
         {
-            case Message.MessageType.Topic:                
+            case Message.MessageType.Topic:
+                rawImage.texture = bubbleColors[1];
                 break;
             case Message.MessageType.Feeling:
+                rawImage.texture = bubbleColors[2];
                 break;
             case Message.MessageType.SmallTalk:
+                rawImage.texture = bubbleColors[3];
                 break;
             case Message.MessageType.FeelingTopic:
+                rawImage.texture = bubbleColors[0];
                 break;
             default:
                 Debug.Log("No message type");

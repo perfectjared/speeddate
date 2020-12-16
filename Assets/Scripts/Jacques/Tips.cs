@@ -24,6 +24,11 @@ public class Tips : MonoBehaviour
         ToolTips.ShowTooltip_Static("How much time you have before the next round");
     }
 
+    public void Ammo()
+    {
+        ToolTips.ShowTooltip_Static("Ammo Count: You can only click on bubbles whilst you have ammo");
+    }
+
     public void HideTip()
     {
         ToolTips.HideTooltip_Static();
