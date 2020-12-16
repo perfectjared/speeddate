@@ -45,7 +45,7 @@ public class ChatBox : MonoBehaviour
         }
     }
 
-    public void ReceiveMessage(Message msg, bool character = true) {
+    public void ReceiveMessage(Message msg, bool player = true) {
 		bubbleMessage.messageType = msg.messageType;
 		bubbleMessage.feeling = msg.feeling;
 		bubbleMessage.topic = msg.topic;

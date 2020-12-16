@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using UnityTracery;
 
 public class Character : MonoBehaviour
 {
@@ -22,7 +23,13 @@ public class Character : MonoBehaviour
     public float speechRate = 0.5f;
     private int speechSinceSubjectChange = 0;
     private Character.Topic topic;
+    public TextAsset GrammarFile;
+    public TraceryGrammar Grammar;
 
+    private void Start() {
+        Grammar = new TraceryGrammar(GrammarFile.text);
+    }
+    
     void Update() {
         if (active) {
             flow = GameplayManager.Instance.flow;
@@ -65,7 +72,7 @@ public class Character : MonoBehaviour
         if (val > 0) GameplayManager.Instance.ChangeFlow();
         else GameplayManager.Instance.ChangeFlow(true);
         
-        affection += val * flow;
+        affection += val;
         if (affection < 0) affection = 0;
         GameplayManager.Instance.AffectionChange(affection);
     }
@@ -98,7 +105,56 @@ public class Character : MonoBehaviour
 
         feeling = sentiments[(int)this.topic];
         Message message = new Message(messageType, this.topic, feeling);
-        GameplayManager.Instance.CharacterSpeak(message);
+        GameplayManager.Instance.CharacterSpeak(GenerateSentence(message));
+    }
+
+    private Message GenerateSentence(Message msg) {
+        string sentence = "";
+        switch(msg.messageType) {
+            case Message.MessageType.Topic:
+            sentence = Grammar.Parse("#topic#");
+            break;
+            case Message.MessageType.Feeling:
+            sentence = Grammar.Parse("#feeling#");
+            break;
+            case Message.MessageType.FeelingTopic:
+            sentence = Grammar.Parse("#feelingTopic#");
+            break;
+            case Message.MessageType.SmallTalk:
+            sentence = Grammar.Parse("#smallTalk#");
+            break;
+        }
+        //& is feeling, $ is topic. topic is red, feeling is green <c=green></c>
+        sentence = sentence.Replace("$", "<c=red>" + msg.topic.ToString().ToUpper() + "</c>");
+        
+        string feeling = "";
+        switch((int)msg.feeling) {
+            case -3:
+            feeling = "hate";
+            break;
+            case -2:
+            feeling = "dislike";
+            break;
+            case -1:
+            feeling = "am disinterested in";
+            break;
+            case 0:
+            feeling = "am neutral toward";
+            break;
+            case 1:
+            feeling = "am interested in";
+            break;
+            case 2: 
+            feeling = "like";
+            break;
+            case 3:
+            feeling = "love";
+            break;
+        }
+        sentence = sentence.Replace("&", "<c=green>" + feeling.ToUpper() + "</c>");
+
+        msg.sentence = sentence;
+        return msg;
     }
 
     private void ChangeTopic() {
