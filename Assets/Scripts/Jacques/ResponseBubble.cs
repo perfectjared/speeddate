@@ -46,8 +46,7 @@ public class ResponseBubble : MonoBehaviour
         message = msg;
         switch (message.messageType)
         {
-            case Message.MessageType.Topic:
-                
+            case Message.MessageType.Topic:                
                 break;
             case Message.MessageType.Feeling:
                 break;
