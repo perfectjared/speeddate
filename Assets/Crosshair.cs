@@ -9,11 +9,10 @@ public class Crosshair : Singleton<Crosshair>
     public int ammo = 6;
     public Texture2D cursorTexture;
     public CursorMode cursorMode = CursorMode.Auto;
-    public AudioSource shootSource;
-    public AudioSource noShootSource;
-    public AudioSource reloadSource;
     public _UnityEventInt ammoChange;
     public bool onscreen = false;
+
+    private AudioManager audioManager;
 
     private bool shooting = false;
     
@@ -22,6 +21,8 @@ public class Crosshair : Singleton<Crosshair>
         var x = cursorTexture.width / 2;
         var y = cursorTexture.height / 2;
         Cursor.SetCursor(cursorTexture, new Vector2(x, y), cursorMode);
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -30,10 +31,11 @@ public class Crosshair : Singleton<Crosshair>
            shooting = true;
            ammo--;
            ammoChange.Invoke(ammo);
-           shootSource.Play();
+           audioManager.Play("Shoot");
+            audioManager.sounds[0].source.pitch = Random.Range(1f, 1.1f); 
        }
        if (Input.GetMouseButtonDown(0) && !shooting && ammo < 1) {
-           noShootSource.Play();
+            audioManager.Play("Empty");
        }
        if (!Input.GetMouseButtonDown(0) && shooting) {
            shooting = false;
@@ -51,6 +53,6 @@ public class Crosshair : Singleton<Crosshair>
     void Reload() {
         ammo = 6;
         ammoChange.Invoke(ammo);
-        reloadSource.Play();
+        audioManager.Play("Empty");
     }
 }
