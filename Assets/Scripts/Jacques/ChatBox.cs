@@ -59,13 +59,15 @@ public class ChatBox : MonoBehaviour
 		GameObject newBubble;
 		if (!character) {
 			newBubble = Instantiate(playerSpeechBubble, chatWindow);
+			newBubble.LeanScale(new Vector3(-1, 1, 0), 0.3f);
 		} else {
 			newBubble = Instantiate(speechBubble, chatWindow);
+			newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
 		}
 
 		newBubble.LeanRotate(new Vector3(0, 0, 0), 1f).setEaseOutElastic();
 		newBubble.GetComponent<RectTransform>().LeanAlpha(0.8f, 0.5f);
-		newBubble.LeanScale(new Vector3(1, 1, 0), 0.3f);
+
 
 		var tempMessage = newBubble.AddComponent<Message>();
 		tempMessage.messageType = bubbleMessage.messageType;

@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 6973756448838126680}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 6973756449859818411}
   m_Father: {fileID: 0}
@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: -150}
+  m_AnchoredPosition: {x: 100, y: -150}
   m_SizeDelta: {x: 266.63757, y: 90}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6973756448838126683
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c8af7b43b1984d64488be9b5ae5b62ec, type: 3}
+  m_Texture: {fileID: 2800000, guid: 115ca5dd375ad1548b0dd88f639ad9f3, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -531,21 +531,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
   rawBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
-  topLeftBounds: {x: 256.70792, y: -138.72083, z: 0}
-  topRightBounds: {x: 256.7079, y: -38.598007, z: 0}
-  bottomLeftBounds: {x: 286.2921, y: -138.7208, z: 0}
-  bottomRightBounds: {x: 286.2921, y: -38.598007, z: 0}
-  centerBounds: {x: 271.5, y: -88.65942, z: 0}
-  topLeftTextBounds: {x: 256.70792, y: -103.98285, z: 0}
-  topRightTextBounds: {x: 256.70792, y: -73.33597, z: 0}
-  bottomLeftTextBounds: {x: 263.70792, y: -103.98285, z: 0}
-  bottomRightTextBounds: {x: 263.70792, y: -73.33597, z: 0}
-  centerTextBounds: {x: 260.20792, y: -88.65941, z: 0}
-  finalTopLeftTextBounds: {x: 256.70792, y: -103.98285, z: 0}
-  finalTopRightTextBounds: {x: 256.70792, y: -73.33597, z: 0}
-  finalBottomLeftTextBounds: {x: 263.70792, y: -103.98285, z: 0}
-  finalBottomRightTextBounds: {x: 263.70792, y: -73.33597, z: 0}
-  finalCenterTextBounds: {x: 260.20792, y: -88.65941, z: 0}
+  topLeftBounds: {x: 463.41583, y: -154.94162, z: 0}
+  topRightBounds: {x: 463.4158, y: 45.303986, z: 0}
+  bottomLeftBounds: {x: 522.5842, y: -154.94159, z: 0}
+  bottomRightBounds: {x: 522.5842, y: 45.303986, z: 0}
+  centerBounds: {x: 493.00003, y: -54.818817, z: 0}
+  topLeftTextBounds: {x: 463.4158, y: -85.4657, z: 0}
+  topRightTextBounds: {x: 463.4158, y: -24.171936, z: 0}
+  bottomLeftTextBounds: {x: 477.4158, y: -85.4657, z: 0}
+  bottomRightTextBounds: {x: 477.4158, y: -24.171936, z: 0}
+  centerTextBounds: {x: 470.4158, y: -54.818817, z: 0}
+  finalTopLeftTextBounds: {x: 463.4158, y: -85.4657, z: 0}
+  finalTopRightTextBounds: {x: 463.4158, y: -24.171936, z: 0}
+  finalBottomLeftTextBounds: {x: 477.4158, y: -85.4657, z: 0}
+  finalBottomRightTextBounds: {x: 477.4158, y: -24.171936, z: 0}
+  finalCenterTextBounds: {x: 470.4158, y: -54.818817, z: 0}
   unwrappedBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
