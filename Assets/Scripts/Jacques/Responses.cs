@@ -17,62 +17,62 @@ public class Responses : Singleton<Responses>
     // Hides the responses and resets thier rotation
     public void InitialiseResponses()
     {
-  
-        Debug.Log("Spawned");
-        GameObject newTop = top;
-        GameObject newMiddle = middle;
-        GameObject newBottom = bottom;
+        GameObject newTop;
+        GameObject newMiddle;
+        GameObject newBottom;       
 
-        if (!GameObject.Find("Top"))
+        if (GameObject.Find("Top"))
         {
-            newTop = Instantiate(newTop, spawnPos.position, Quaternion.identity, this.transform);
-            newTop.name = "Top";
-            newTop.LeanMoveLocal(topPos, 0.7f).setEaseSpring();
-            newTop.LeanRotateZ(-32, 1f).setEaseOutElastic();
+            Destroy(GameObject.Find("Top"));
         }
 
-        if (!GameObject.Find("Middle"))
+        if (GameObject.Find("Middle"))
         {
-            newMiddle = Instantiate(newMiddle, spawnPos.position, Quaternion.identity, this.transform);
-            newMiddle.name = "Middle";
-            newMiddle.LeanMoveLocal(middlePos, 0.7f).setEaseSpring();
-            newMiddle.LeanRotateZ(-16, 1f).setEaseOutElastic();
+            Destroy(GameObject.Find("Middle"));
         }
 
-        if (!GameObject.Find("Bottom"))
+        if (GameObject.Find("Bottom"))
         {
-            newBottom = Instantiate(newBottom, spawnPos.position, Quaternion.identity, this.transform);
-            newBottom.name = "Bottom";
-            newBottom.LeanMoveLocal(bottomPos, 0.5f).setEaseSpring();
+            Destroy(GameObject.Find("Bottom"));
         }
+
+        newTop = Instantiate(top, spawnPos.position, Quaternion.identity, this.transform);
+        newTop.name = "Top";
+        DisplayResponse(newTop);
+
+        newMiddle = Instantiate(middle, spawnPos.position, Quaternion.identity, this.transform);
+        newMiddle.name = "Middle";
+        DisplayResponse(newMiddle);
+
+        newBottom = Instantiate(bottom, spawnPos.position, Quaternion.identity, this.transform);
+        newBottom.name = "Bottom";
+        DisplayResponse(newBottom);
     }
 
-    public void BubbleClicked(string name) 
+    public void BubbleClicked(GameObject clickedBubble) 
     {
-        Debug.Log(name);        
+       
     }
 
-    // Shows three repsonses
-    public void Cycle()
+    public void DisplayResponse(GameObject responseBubble)
     {
         //NOTE: I have no idea how we're gonna make the response bubbles be based on the message type     
 
-        //var topImage = response_top.GetComponent<RawImage>();
-        //var middleImage = response_middle.GetComponent<RawImage>();
-        //var bottomImage = response_bottom.GetComponent<RawImage>();
+        if (responseBubble.name == "Top")
+        {
+            responseBubble.LeanMoveLocal(topPos, 0.7f).setEaseSpring();
+            responseBubble.LeanRotateZ(-32, 1f).setEaseOutElastic();
+        }
 
-        //// Moves and rotates the top bubble
-        //response_top.LeanMoveLocal(topPos, 0.7f).setEaseSpring();
-        //response_top.LeanRotateZ(-32, 1f).setEaseOutElastic();
-        //// Moves the middle button
-        //response_middle.LeanMoveLocal(middlePos, 0.7f).setEaseSpring();
-        //response_middle.LeanRotateZ(-16, 1f).setEaseOutElastic();
-        //// Moves the bottom bubble
-        //response_bottom.LeanMoveLocal(bottomPos, 0.5f).setEaseSpring();
+        if (responseBubble.name == "Middle")
+        {
+            responseBubble.LeanMoveLocal(middlePos, 0.7f).setEaseSpring();
+            responseBubble.LeanRotateZ(-16, 1f).setEaseOutElastic();
+        }
 
-        //// Randomly assigns a texture
-        //topImage.texture = bubbleColors[Random.Range(0, 4)];
-        //middleImage.texture = bubbleColors[Random.Range(0, 4)];
-        //bottomImage.texture = bubbleColors[Random.Range(0, 4)];
+        if (responseBubble.name == "Bottom")
+        {
+            responseBubble.LeanMoveLocal(bottomPos, 0.5f).setEaseSpring();
+        }              
     }
 }

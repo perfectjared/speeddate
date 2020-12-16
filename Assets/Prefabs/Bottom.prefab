@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8589014601689218737}
   - component: {fileID: 8589014601689218739}
   - component: {fileID: 8589014601689218738}
-  - component: {fileID: 1068779540313117372}
-  - component: {fileID: 6538959199927476359}
-  - component: {fileID: 4436876264028839189}
+  - component: {fileID: 3690127459383526788}
+  - component: {fileID: 3542502868507814758}
+  - component: {fileID: 3342448454423734031}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: -110}
+  m_AnchoredPosition: {x: -70, y: -70}
   m_SizeDelta: {x: 169.97363, y: 84.98682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8589014601689218739
@@ -75,7 +75,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &1068779540313117372
+--- !u!114 &3690127459383526788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd00b56d66c5bb4e82ef02dd2e53eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6538959199927476359
+--- !u!114 &3542502868507814758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1068779540313117372}
+      - m_Target: {fileID: 3690127459383526788}
         m_MethodName: Click
         m_Mode: 1
         m_Arguments:
@@ -141,7 +141,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4436876264028839189
+--- !u!114 &3342448454423734031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +158,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1068779540313117372}
+        - m_Target: {fileID: 3690127459383526788}
           m_MethodName: OnHover
           m_Mode: 1
           m_Arguments:
@@ -173,7 +173,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1068779540313117372}
+        - m_Target: {fileID: 3690127459383526788}
           m_MethodName: OffHover
           m_Mode: 1
           m_Arguments:
@@ -201,7 +201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8589014601856712798
 RectTransform:
   m_ObjectHideFlags: 0
