@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.918213, y: -240.9726}
+  m_AnchoredPosition: {x: -150, y: -150}
   m_SizeDelta: {x: 266.63757, y: 90}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6973756448838126683
@@ -532,21 +532,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 100.12279, y: -29.584198, z: 0}
   rawBottomRightBounds: {x: -100.12279, y: 29.584198, z: 0}
   rawBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
-  topLeftBounds: {x: 386.21033, y: -79.57059, z: 0}
-  topRightBounds: {x: 386.21033, y: -179.69336, z: 0}
-  bottomLeftBounds: {x: 356.62613, y: -79.57059, z: 0}
-  bottomRightBounds: {x: 356.62613, y: -179.69336, z: 0}
-  centerBounds: {x: 371.4182, y: -129.63197, z: 0}
-  topLeftTextBounds: {x: 386.21033, y: -114.30853, z: 0}
-  topRightTextBounds: {x: 386.21033, y: -144.95541, z: 0}
-  bottomLeftTextBounds: {x: 379.21033, y: -114.30853, z: 0}
-  bottomRightTextBounds: {x: 379.21033, y: -144.95541, z: 0}
-  centerTextBounds: {x: 382.71033, y: -129.63197, z: 0}
-  finalTopLeftTextBounds: {x: 386.21033, y: -114.30853, z: 0}
-  finalTopRightTextBounds: {x: 386.21033, y: -144.95541, z: 0}
-  finalBottomLeftTextBounds: {x: 379.21033, y: -114.30853, z: 0}
-  finalBottomRightTextBounds: {x: 379.21033, y: -144.95541, z: 0}
-  finalCenterTextBounds: {x: 382.71033, y: -129.63197, z: 0}
+  topLeftBounds: {x: 197.2921, y: -1.097992, z: 0}
+  topRightBounds: {x: 197.2921, y: -101.220764, z: 0}
+  bottomLeftBounds: {x: 167.7079, y: -1.097992, z: 0}
+  bottomRightBounds: {x: 167.7079, y: -101.220764, z: 0}
+  centerBounds: {x: 182.5, y: -51.159378, z: 0}
+  topLeftTextBounds: {x: 197.2921, y: -35.835938, z: 0}
+  topRightTextBounds: {x: 197.2921, y: -66.48282, z: 0}
+  bottomLeftTextBounds: {x: 190.2921, y: -35.835938, z: 0}
+  bottomRightTextBounds: {x: 190.29211, y: -66.48282, z: 0}
+  centerTextBounds: {x: 193.79211, y: -51.159378, z: 0}
+  finalTopLeftTextBounds: {x: 197.2921, y: -35.835938, z: 0}
+  finalTopRightTextBounds: {x: 197.2921, y: -66.48282, z: 0}
+  finalBottomLeftTextBounds: {x: 190.2921, y: -35.835938, z: 0}
+  finalBottomRightTextBounds: {x: 190.29211, y: -66.48282, z: 0}
+  finalCenterTextBounds: {x: 193.79211, y: -51.159378, z: 0}
   unwrappedBottomRightTextBounds: {x: 61.293755, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
