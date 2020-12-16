@@ -30,7 +30,7 @@ public class Crosshair : Singleton<Crosshair>
        if (Input.GetMouseButtonDown(0) && !shooting && ammo > 0) {
            shooting = true;
            audioManager.Play("Shoot");
-            audioManager.sounds[0].source.pitch = Random.Range(1f, 1.1f); 
+           audioManager.sounds[0].source.pitch = Random.Range(1f, 1.1f); 
        }
        if (Input.GetMouseButtonDown(0) && !shooting && ammo < 1) {
             audioManager.Play("Empty");
@@ -53,6 +53,6 @@ public class Crosshair : Singleton<Crosshair>
     public void Reload() {
         ammo = 6;
         ammoChange.Invoke(ammo);
-        audioManager.Play("Empty");
+        audioManager.Play("Reload");
     }
 }
