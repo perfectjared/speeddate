@@ -67,9 +67,6 @@ public class GameplayManager : Singleton<GameplayManager>
             characterAt = 1;
         }
 
-        if (round == 3) {
-            GameStateMachine.Instance.Next();
-        } else {
             character = characters[characterAt - 1].GetComponent<Character>();
             character.Initialize();
             //Move Char on screen
@@ -91,7 +88,6 @@ public class GameplayManager : Singleton<GameplayManager>
             ChangeTopic(Character.Topic.None);
             chatBox.DeleteChatBoxes();
             StartCoroutine(WaitForTimer());
-        }
     }
 
     [Button]
