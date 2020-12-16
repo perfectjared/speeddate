@@ -7,11 +7,11 @@ enum State { Start, Play, Transition, Pause, Cutscene, End};
 public class GameplayManager : Singleton<GameplayManager>
 {
     public ChatBox chatBox;
-    
+
     [SerializeField]
     private Character character;
     [SerializeField]
-    private int characterAt = 0;
+    public int characterAt = 0;
     public List<GameObject> characters = new List<GameObject>();
 
     [SerializeField]
@@ -23,7 +23,7 @@ public class GameplayManager : Singleton<GameplayManager>
     public float flowAdd = 0.05f;
 
     public Character.Topic topic = Character.Topic.None;
-    
+
     public _UnityEventFloat affectionChange;
     public _UnityEventFloat flowChange;
     public _UnityEventString topicChange;
@@ -55,14 +55,14 @@ public class GameplayManager : Singleton<GameplayManager>
 
     [Button]
     private void NextCharacter() {
-        if (character) 
-        { 
+        if (character)
+        {
             character.Denitialize();
             character.gameObject.GetComponent<RectTransform>().LeanMoveLocalX(850, 3).setEaseInOutSine().setOnComplete(ResetPlayerPos);
         }
         flow = 0.1f;
         characterAt++;
-        
+
         if (characterAt > characters.Count) {
             round++;
             characterAt = 1;
@@ -104,7 +104,7 @@ public class GameplayManager : Singleton<GameplayManager>
 
     public void ResetPlayerPos()
     {
-        character.gameObject.GetComponent<RectTransform>().position = new Vector3(-400, -30, 0); 
+        character.gameObject.GetComponent<RectTransform>().position = new Vector3(-400, -30, 0);
     }
 
     private IEnumerator WaitForTimer() {
