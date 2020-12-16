@@ -29,7 +29,6 @@ public class Crosshair : Singleton<Crosshair>
     {  
        if (Input.GetMouseButtonDown(0) && !shooting && ammo > 0) {
            shooting = true;
-           ammoChange.Invoke(ammo);
            audioManager.Play("Shoot");
             audioManager.sounds[0].source.pitch = Random.Range(1f, 1.1f); 
        }
@@ -38,6 +37,7 @@ public class Crosshair : Singleton<Crosshair>
        }
        if (Input.GetMouseButtonUp(0) && shooting) {
            ammo--;
+           ammoChange.Invoke(ammo);
            shooting = false;
        }
     }
