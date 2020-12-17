@@ -18,7 +18,6 @@ public class musicTime : MonoBehaviour
 
   //characterAt indexes 1 == pierre 2 == aubrey 3 == amber
 
-
     // Start is called before the first frame update
     void Start()
     {
