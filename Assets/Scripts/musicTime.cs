@@ -80,12 +80,12 @@ public class musicTime : MonoBehaviour
         firstMusic = false;
       }
 
-
     }
 
     IEnumerator crossfade(){
       speakers[pointyLater].volume = 0.0f;
       Debug.Log("Crossfade Called");
+      firstMusic = true;
       while(speakers[pointyNow].volume > 0.0f){
         speakers[pointyNow].volume -= Time.deltaTime;
         if (speakers[pointyLater].volume < maxVol) {
